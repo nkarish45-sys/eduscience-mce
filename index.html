@@ -6,268 +6,101 @@
 <title>EduScience MCE Study Hub</title>
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+* {
+  box-sizing: border-box;
 }
 
-body{
-    font-family:Arial, sans-serif;
-    background:#f4f7fb;
-    color:#172033;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
 }
 
-header{
-    background:#123b67;
-    color:white;
-    padding:20px;
-    text-align:center;
+header {
+  background: #123b6d;
+  color: white;
+  padding: 24px 15px;
+  text-align: center;
 }
 
-header h1{
-    font-size:25px;
-    margin-bottom:6px;
+header h1 {
+  margin: 0 0 8px;
 }
 
-header p{
-    opacity:.9;
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
 }
 
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:20px;
+.card {
+  background: white;
+  padding: 20px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.08);
 }
 
-.selector-box{
-    background:white;
-    padding:20px;
-    border-radius:14px;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
-    margin-bottom:20px;
+select,
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #ccd4df;
+  font-size: 15px;
 }
 
-.selector-box h2{
-    margin-bottom:15px;
+button {
+  background: #123b6d;
+  color: white;
+  cursor: pointer;
+  border: none;
 }
 
-select{
-    width:100%;
-    padding:13px;
-    margin-bottom:12px;
-    border:1px solid #ccd5e0;
-    border-radius:8px;
-    font-size:15px;
-    background:white;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 15px;
 }
 
-.dashboard{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:15px;
-    margin-bottom:20px;
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+  gap: 10px;
 }
 
-.stat{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    text-align:center;
-    box-shadow:0 2px 8px rgba(0,0,0,.06);
+.stat {
+  background: #eef4fb;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
 }
 
-.stat strong{
-    display:block;
-    font-size:27px;
-    color:#123b67;
-    margin-bottom:5px;
+.stat strong {
+  display: block;
+  font-size: 24px;
+  color: #123b6d;
 }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:18px;
+.question {
+  border: 1px solid #e0e5ec;
+  padding: 15px;
+  margin: 12px 0;
+  border-radius: 10px;
 }
 
-.card{
-    background:white;
-    padding:20px;
-    border-radius:14px;
-    box-shadow:0 3px 10px rgba(0,0,0,.07);
+.answer {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  background: #edf8ee;
+  border-left: 4px solid #31924a;
 }
 
-.card h3{
-    color:#123b67;
-    margin-bottom:10px;
-}
-
-.card p{
-    color:#5d6878;
-    line-height:1.5;
-    margin-bottom:15px;
-}
-
-button{
-    border:none;
-    padding:11px 16px;
-    border-radius:8px;
-    cursor:pointer;
-    font-weight:bold;
-    margin:4px;
-}
-
-.primary{
-    background:#123b67;
-    color:white;
-}
-
-.secondary{
-    background:#e8eef6;
-    color:#123b67;
-}
-
-.green{
-    background:#197a4b;
-    color:white;
-}
-
-.orange{
-    background:#d97816;
-    color:white;
-}
-
-.red{
-    background:#b83232;
-    color:white;
-}
-
-.hidden{
-    display:none;
-}
-
-.section{
-    background:white;
-    padding:20px;
-    margin-top:20px;
-    border-radius:14px;
-    box-shadow:0 3px 10px rgba(0,0,0,.07);
-}
-
-.section h2{
-    color:#123b67;
-    margin-bottom:15px;
-}
-
-.topic-list{
-    display:grid;
-    gap:8px;
-}
-
-.topic{
-    background:#f1f5fa;
-    padding:12px;
-    border-radius:8px;
-}
-
-.question{
-    border:1px solid #dce3ec;
-    border-radius:10px;
-    padding:15px;
-    margin-bottom:12px;
-}
-
-.question strong{
-    color:#123b67;
-}
-
-.answer{
-    margin-top:10px;
-    padding:10px;
-    background:#eef8f2;
-    border-radius:7px;
-    color:#145c38;
-    display:none;
-}
-
-.paper{
-    padding:15px;
-    border:1px solid #dce3ec;
-    border-radius:10px;
-    margin-bottom:10px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:10px;
-}
-
-.lock{
-    color:#a66a00;
-    font-weight:bold;
-}
-
-footer{
-    text-align:center;
-    padding:30px 15px;
-    color:#657084;
-}
-
-.modal{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.55);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    z-index:1000;
-}
-
-.modal-content{
-    background:white;
-    width:min(500px,92%);
-    padding:25px;
-    border-radius:15px;
-}
-
-.modal-content h2{
-    margin-bottom:10px;
-    color:#123b67;
-}
-
-.close{
-    float:right;
-    cursor:pointer;
-    font-size:22px;
-}
-
-.progress{
-    width:100%;
-    height:10px;
-    background:#e2e7ee;
-    border-radius:10px;
-    overflow:hidden;
-    margin:10px 0 15px;
-}
-
-.progress-bar{
-    height:100%;
-    width:0%;
-    background:#197a4b;
-}
-
-@media(max-width:600px){
-    header h1{
-        font-size:21px;
-    }
-
-    .container{
-        padding:12px;
-    }
-
-    .paper{
-        flex-direction:column;
-        align-items:flex-start;
-    }
+.answer.show {
+  display: block;
 }
 </style>
 </head>
@@ -275,1029 +108,324 @@ footer{
 <body>
 
 <header>
-    <h1>EduScience MCE Study Hub</h1>
-    <p>B.Ed Science — Mathematics & Chemistry</p>
+<h1>EduScience MCE Study Hub</h1>
+<p>Mathematics & Chemistry Education Study Platform</p>
 </header>
 
 <div class="container">
 
-    <!-- UNIVERSITY SELECTION -->
-    <div class="selector-box">
-        <h2>Choose University</h2>
+<div class="card">
+<h2>Select Your Study Area</h2>
 
-        <select id="universitySelect" onchange="loadUniversity()">
-            <option value="">Select University</option>
-            <option value="egerton">Egerton University</option>
-            <option value="uon">University of Nairobi</option>
-            <option value="ku">Kenyatta University</option>
-            <option value="jkuat">Jomo Kenyatta University of Agriculture and Technology</option>
-            <option value="maseno">Maseno University</option>
-        </select>
+<div class="grid">
 
-        <h2>Choose Unit</h2>
-
-        <select id="unitSelect" onchange="loadUnit()">
-            <option value="">Select University first</option>
-        </select>
-
-        <h2>Choose Topic</h2>
-
-        <select id="topicSelect" onchange="showTopic()">
-            <option value="">Select Unit first</option>
-        </select>
-    </div>
-
-    <!-- DASHBOARD -->
-    <div class="dashboard">
-
-        <div class="stat">
-            <strong>5</strong>
-            Universities
-        </div>
-
-        <div class="stat">
-            <strong>7</strong>
-            Units
-        </div>
-
-        <div class="stat">
-            <strong>30</strong>
-            CAT Questions
-        </div>
-
-        <div class="stat">
-            <strong>70+</strong>
-            Revision Questions
-        </div>
-
-        <div class="stat">
-            <strong>30+</strong>
-            Mock Papers
-        </div>
-
-    </div>
-
-    <!-- TOPIC AREA -->
-    <div id="topicArea" class="section hidden"></div>
-
-    <!-- MAIN FEATURES -->
-    <div class="cards">
-
-        <div class="card">
-            <h3>📝 CAT Practice</h3>
-            <p>
-                Original CAT-style questions covering the selected unit
-                and its topics.
-            </p>
-            <button class="primary" onclick="openCAT()">
-                Start CAT
-            </button>
-        </div>
-
-        <div class="card">
-            <h3>📚 Revision Questions</h3>
-            <p>
-                Large question bank for serious revision before CATs and exams.
-            </p>
-            <button class="secondary" onclick="openRevision()">
-                Revision Bank
-            </button>
-        </div>
-
-        <div class="card">
-            <h3>📄 Mock Papers</h3>
-            <p>
-                Original university-style examination papers for practice.
-            </p>
-            <button class="orange" onclick="openPapers()">
-                View Papers
-            </button>
-        </div>
-
-        <div class="card">
-            <h3>🎯 Study Progress</h3>
-            <p>
-                Track the topics you have completed while studying.
-            </p>
-            <button class="green" onclick="showProgress()">
-                My Progress
-            </button>
-        </div>
-
-    </div>
-
-    <!-- CONTENT -->
-    <div id="contentArea" class="section hidden"></div>
-
+<div>
+<label>University</label>
+<select id="university">
+<option value="">Select University</option>
+<option>Egerton University</option>
+<option>University of Nairobi</option>
+<option>Kenyatta University</option>
+<option>JKUAT</option>
+<option>Maseno University</option>
+</select>
 </div>
 
-<footer>
-    <p>EduScience MCE Study Hub</p>
-    <p>Original educational content • Mock papers are not official university papers</p>
-</footer>
+<div>
+<label>Unit / Course</label>
+<select id="unit">
+<option value="">Select Unit</option>
+</select>
+</div>
 
-<!-- PAYMENT / ACCESS MODAL -->
-<div id="paymentModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">×</span>
+<div>
+<label>Topic</label>
+<select id="topic">
+<option value="">Select Topic</option>
+</select>
+</div>
 
-        <h2>Full Access</h2>
+</div>
+</div>
 
-        <p style="margin:15px 0;">
-            Full CATs, revision banks and downloadable mock papers
-            can be placed behind paid access.
-        </p>
+<div class="card">
+<div class="stats">
+<div class="stat">
+<strong>5</strong>
+Universities
+</div>
 
-        <p>
-            <strong>Payment integration placeholder</strong>
-        </p>
+<div class="stat">
+<strong>7</strong>
+Courses
+</div>
 
-        <button class="primary" onclick="simulateUnlock()">
-            Unlock Access
-        </button>
-    </div>
+<div class="stat">
+<strong>30</strong>
+CAT Questions
+</div>
+
+<div class="stat">
+<strong>70+</strong>
+Revision Questions
+</div>
+
+<div class="stat">
+<strong>40+</strong>
+Mock Papers
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2 id="courseTitle">Study Dashboard</h2>
+<p id="message">
+Select a university, unit and topic to begin studying.
+</p>
+
+<button onclick="showCAT()">CAT Practice</button>
+<button onclick="showRevision()">Revision Questions</button>
+<button onclick="showMocks()">Mock Papers</button>
+</div>
+
+<div id="content" class="card">
+<h2>Welcome</h2>
+<p>
+Choose your university and course above to access original
+study materials.
+</p>
+</div>
+
 </div>
 
 <script>
 
-/* =========================================================
-   UNIVERSITY DATA
-========================================================= */
+const courses = {
 
-const universities = {
-
-    egerton: {
-        name:"Egerton University"
-    },
-
-    uon: {
-        name:"University of Nairobi"
-    },
-
-    ku: {
-        name:"Kenyatta University"
-    },
-
-    jkuat: {
-        name:"Jomo Kenyatta University of Agriculture and Technology"
-    },
-
-    maseno: {
-        name:"Maseno University"
-    }
-
-};
-
-
-/* =========================================================
-   UNIT DATA
-========================================================= */
-
-const units = {
-
-    "MATH 132": {
-
-        name:"MATH 132",
-
-        topics:[
-            "Equation of a Straight Line",
-            "Equation of a Circle",
-            "Parabola",
-            "Hyperbola",
-            "Ellipse",
-            "Vector Operations",
-            "Vectors in Cartesian Coordinates",
-            "Equation of a Line Using Vectors and Cartesian Coordinates",
-            "Equation of a Plane Using Vectors and Cartesian Coordinates"
-        ]
-
-    },
-
-
-    "CHEM 110": {
-
-        name:"CHEM 110",
-
-        topics:[
-            "History of the Atom",
-            "Stoichiometry — Mole Concept",
-            "Quantum Theory and Atomic Structures",
-            "Trends in Physical Properties of Group Elements",
-            "Graphic Materials",
-            "Chemical Bonding"
-        ]
-
-    },
-
-
-    "MATH 112": {
-
-        name:"MATH 112",
-
-        topics:[
-            "Sequences and Series",
-            "Trigonometry",
-            "Set Theory",
-            "Mathematical Logic",
-            "Number Systems",
-            "Relations and Mapping",
-            "Functions",
-            "Permutations and Combinations",
-            "Binomial Theorem"
-        ]
-
-    },
-
-
-    "COMP 101": {
-
-        name:"COMP 101",
-
-        topics:[
-            "Nature and Functions of Computers",
-            "Hardware, Software, Firmware and Power",
-            "Data Processing",
-            "Information Systems",
-            "Processor / CPU",
-            "Motherboard",
-            "RAM",
-            "ROM",
-            "Hard Drive",
-            "Input and Output Adaptors",
-            "Removable Storage Devices",
-            "Computer Networks and Internet",
-            "Windows-Based Operating Environment",
-            "Electronic Mail",
-            "World Wide Web",
-            "Word Processing",
-            "Database",
-            "Electronic Spreadsheets"
-        ]
-
-    },
-
-
-    "EPSC 121": {
-
-        name:"EPSC 121 — Psychology",
-
-        topics:[
-            "Introduction to Psychology",
-            "Psychology as a Science",
-            "Goals of Psychology",
-            "Historical Development of Psychology",
-            "Branches and Schools of Psychology",
-            "Structuralism",
-            "Functionalism",
-            "Behaviourism",
-            "Humanistic Perspective",
-            "Cognitive Perspective",
-            "Biological Perspective",
-            "Eclectic Perspective",
-            "Heredity and Environment",
-            "Biological Basis of Behaviour",
-            "Nervous System",
-            "Central and Peripheral Nervous Systems",
-            "Neurons",
-            "Autonomic Nervous System",
-            "Sympathetic and Parasympathetic Divisions",
-            "Endocrine System and Hormones",
-            "Brain and Main Divisions",
-            "Spinal Cord",
-            "Motivation",
-            "Intrinsic and Extrinsic Motivation",
-            "Maslow's Hierarchy of Needs"
-        ]
-
-    },
-
-
-    "EDFO 111": {
-
-        name:"EDFO 111 — History of Education",
-
-        topics:[
-            "History and Development of Education",
-            "Foundations of Education",
-            "Spartan Education",
-            "Athenian Education",
-            "Comparison of Spartan and Athenian Education",
-            "Religious Foundations of Education",
-            "Islamic Education",
-            "Jewish Education",
-            "Christian Education"
-        ]
-
-    },
-
-
-    "CHEM 120": {
-
-        name:"CHEM 120",
-
-        topics:[
-            "Gases and Kinetic Molecular Theory",
-            "Chemical Equilibrium and Ionic Equilibrium",
-            "Acids and Bases",
-            "Thermochemistry",
-            "Chemical Kinetics",
-            "Electrochemistry"
-        ]
-
-    }
-
-};
-
-
-/* =========================================================
-   QUESTION BANK
-   ========================================================= */
-
-const questionBank = {
-
-"MATH 132":[
-
-{
-q:"Find the gradient of the line passing through (2,3) and (6,11).",
-a:"m = (11 − 3)/(6 − 2) = 8/4 = 2."
-},
-
-{
-q:"Find the equation of the line with gradient 3 passing through (2,5).",
-a:"y − 5 = 3(x − 2), hence y = 3x − 1."
-},
-
-{
-q:"Find the centre and radius of x² + y² − 4x + 6y − 12 = 0.",
-a:"Completing squares gives (x − 2)² + (y + 3)² = 25. Centre = (2,−3), radius = 5."
-},
-
-{
-q:"Find the magnitude of vector v = (3,4).",
-a:"|v| = √(3² + 4²) = 5."
-},
-
-{
-q:"Find the dot product of (2,3) and (4,−1).",
-a:"2(4) + 3(−1) = 8 − 3 = 5."
-},
-
-{
-q:"Find the distance between A(1,2,3) and B(4,6,3).",
-a:"√[(4−1)² + (6−2)² + (3−3)²] = 5."
-}
-
+"MATH 132": [
+"Equation of a straight line",
+"Equation of a circle",
+"Parabola",
+"Hyperbola",
+"Ellipse",
+"Vector operations",
+"Vectors in Cartesian coordinates",
+"Equation of a line using vectors and Cartesian coordinates",
+"Equation of a plane using vectors and Cartesian coordinates"
 ],
 
-
-"CHEM 110":[
-
-{
-q:"How many moles are present in 18 g of water? (H₂O = 18 g mol⁻¹)",
-a:"n = m/M = 18/18 = 1 mol."
-},
-
-{
-q:"Calculate the number of molecules in 2 mol of H₂O.",
-a:"N = nNA = 2 × 6.022 × 10²³ = 1.2044 × 10²⁴ molecules."
-},
-
-{
-q:"What is the atomic number of an element with 17 protons?",
-a:"The atomic number is 17."
-},
-
-{
-q:"What is meant by an isotope?",
-a:"Atoms of the same element having the same number of protons but different numbers of neutrons."
-}
-
+"CHEM 110": [
+"History of the atom",
+"Stoichiometry — mole concept",
+"Quantum theory and atomic structures",
+"Trends in physical properties of group elements",
+"Graphic materials",
+"Chemical bonding"
 ],
 
-
-"MATH 112":[
-
-{
-q:"Find the next term: 3, 7, 11, 15, ...",
-a:"The common difference is 4, so the next term is 19."
-},
-
-{
-q:"Evaluate 2³ × 2⁴.",
-a:"2³⁺⁴ = 2⁷ = 128."
-},
-
-{
-q:"If A = {1,2,3} and B = {2,3,4}, find A ∩ B.",
-a:"A ∩ B = {2,3}."
-},
-
-{
-q:"Evaluate 5P2.",
-a:"5P2 = 5!/(5−2)! = 20."
-},
-
-{
-q:"Evaluate 5C2.",
-a:"5C2 = 5!/(2!3!) = 10."
-}
-
+"MATH 112": [
+"Sequence and series",
+"Trigonometry",
+"Set theory",
+"Mathematical logics",
+"Number systems",
+"Relations and mapping",
+"Functions",
+"Permutations and combinations",
+"The binomial theorem"
 ],
 
-
-"COMP 101":[
-
-{
-q:"What is the main function of the CPU?",
-a:"The CPU processes instructions and controls computer operations."
-},
-
-{
-q:"What is RAM used for?",
-a:"RAM temporarily stores data and programs currently being used."
-},
-
-{
-q:"What is an operating system?",
-a:"System software that manages computer hardware, software resources and user interaction."
-},
-
-{
-q:"Give two examples of removable storage devices.",
-a:"USB flash drive and memory card."
-}
-
+"COMP 101": [
+"Nature and functions of computers",
+"Hardware, software, firmware and power",
+"Data processing",
+"Information systems",
+"CPU and motherboard",
+"RAM and ROM",
+"Hard drive",
+"Input/output adaptor",
+"Removable storage devices",
+"Computer network and Internet",
+"Windows-based operating environment",
+"Electronic mail",
+"World Wide Web",
+"CAT 1",
+"Word processing",
+"Database",
+"Electronic spreadsheets",
+"CAT 2"
 ],
 
-
-"EPSC 121":[
-
-{
-q:"Who is commonly associated with establishing the first psychology laboratory in 1879?",
-a:"Wilhelm Wundt."
-},
-
-{
-q:"What does cognitive psychology study?",
-a:"Mental processes such as memory, thinking, perception and problem solving."
-},
-
-{
-q:"What is the basic structural and functional unit of the nervous system?",
-a:"The neuron."
-},
-
-{
-q:"What is intrinsic motivation?",
-a:"Motivation arising from internal interest, satisfaction or enjoyment."
-},
-
-{
-q:"What is extrinsic motivation?",
-a:"Motivation arising from external rewards or consequences."
-}
-
+"EPSC 121": [
+"Introduction to Psychology",
+"Psychology as a Science",
+"Goals of Psychology",
+"Historical Development of Psychology",
+"Branches and Schools of Psychology",
+"Structuralism",
+"Functionalism",
+"Behaviourism",
+"Humanistic perspective",
+"Cognitive perspective",
+"Biological perspective",
+"Eclectic perspective",
+"Heredity and Environment",
+"Biological Basis of Behaviour",
+"Nervous System",
+"CNS and PNS",
+"Neurons",
+"Autonomic nervous system",
+"Sympathetic and parasympathetic divisions",
+"Endocrine system and hormones",
+"Brain and main divisions",
+"Spinal cord",
+"Motivation",
+"Intrinsic and extrinsic motivation",
+"Maslow’s hierarchy of needs"
 ],
 
-
-"EDFO 111":[
-
-{
-q:"What was a major aim of Spartan education?",
-a:"Preparation of citizens for military discipline and service."
-},
-
-{
-q:"What was emphasized in Athenian education?",
-a:"Intellectual, physical, moral and cultural development."
-},
-
-{
-q:"Name one major feature of Islamic education.",
-a:"Emphasis on religious instruction and moral development."
-},
-
-{
-q:"What was an important feature of Jewish education?",
-a:"Transmission of religious beliefs, laws and traditions."
-}
-
+"EDFO 111": [
+"History and development of education",
+"Foundations of education",
+"Spartan education",
+"Athenian education",
+"Comparison of Spartan and Athenian education",
+"Religious foundations of education",
+"Islamic education",
+"Jewish education",
+"Christian education"
 ],
 
-
-"CHEM 120":[
-
-{
-q:"State the ideal gas equation.",
-a:"PV = nRT."
-},
-
-{
-q:"What happens to gas pressure when volume decreases at constant temperature?",
-a:"Pressure increases, provided the amount of gas and temperature remain constant."
-},
-
-{
-q:"What is dynamic chemical equilibrium?",
-a:"A state where forward and reverse reactions occur at equal rates."
-},
-
-{
-q:"Calculate the pH of a solution with [H⁺] = 1 × 10⁻³ mol L⁻¹.",
-a:"pH = −log(10⁻³) = 3."
-},
-
-{
-q:"What does an exothermic reaction do to its surroundings?",
-a:"It releases heat to the surroundings."
-},
-
-{
-q:"What is a catalyst?",
-a:"A substance that changes reaction rate without being consumed overall."
-},
-
-{
-q:"What is oxidation?",
-a:"Loss of electrons or an increase in oxidation state."
-}
-
+"CHEM 120": [
+"Gases and Kinetic Molecular Theory",
+"Chemical Equilibrium and Ionic Equilibrium",
+"Acids and Bases",
+"Thermochemistry",
+"Chemical Kinetics",
+"Electrochemistry"
 ]
 
 };
 
+const university = document.getElementById("university");
+const unit = document.getElementById("unit");
+const topic = document.getElementById("topic");
 
-/* =========================================================
-   APP FUNCTIONS
-========================================================= */
+university.addEventListener("change", function() {
 
-let selectedUniversity = "";
-let selectedUnit = "";
+unit.innerHTML =
+'<option value="">Select Unit</option>';
 
+Object.keys(courses).forEach(function(course) {
 
-function loadUniversity(){
+unit.innerHTML +=
+`<option value="${course}">${course}</option>`;
 
-    selectedUniversity =
-        document.getElementById("universitySelect").value;
+});
 
-    const unitSelect =
-        document.getElementById("unitSelect");
+topic.innerHTML =
+'<option value="">Select Topic</option>';
 
-    unitSelect.innerHTML =
-        '<option value="">Select Unit</option>';
+});
 
-    Object.keys(units).forEach(unit => {
+unit.addEventListener("change", function() {
 
-        const option = document.createElement("option");
+const selected = courses[unit.value];
 
-        option.value = unit;
-        option.textContent = unit;
+topic.innerHTML =
+'<option value="">Select Topic</option>';
 
-        unitSelect.appendChild(option);
+if(selected) {
 
-    });
+selected.forEach(function(item) {
 
-    document.getElementById("topicSelect").innerHTML =
-        '<option value="">Select Unit first</option>';
+topic.innerHTML +=
+`<option value="${item}">${item}</option>`;
 
-    document.getElementById("topicArea").classList.add("hidden");
+});
 
 }
 
+document.getElementById("courseTitle").textContent =
+unit.value || "Study Dashboard";
 
-function loadUnit(){
+});
 
-    selectedUnit =
-        document.getElementById("unitSelect").value;
+topic.addEventListener("change", function() {
 
-    const topicSelect =
-        document.getElementById("topicSelect");
+if(topic.value) {
 
-    topicSelect.innerHTML =
-        '<option value="">Select Topic</option>';
-
-    if(!selectedUnit) return;
-
-    units[selectedUnit].topics.forEach(topic => {
-
-        const option = document.createElement("option");
-
-        option.value = topic;
-        option.textContent = topic;
-
-        topicSelect.appendChild(option);
-
-    });
-
-    showUnitOverview();
-}
-
-
-function showUnitOverview(){
-
-    const area =
-        document.getElementById("topicArea");
-
-    if(!selectedUnit){
-
-        area.classList.add("hidden");
-        return;
-
-    }
-
-    const unit = units[selectedUnit];
-
-    area.classList.remove("hidden");
-
-    area.innerHTML = `
-
-        <h2>${unit.name}</h2>
-
-        <p style="margin-bottom:15px;">
-            Select a topic above to study it.
-        </p>
-
-        <div class="topic-list">
-
-            ${unit.topics.map((topic,index)=>`
-
-                <div class="topic">
-                    <strong>${index+1}.</strong> ${topic}
-                </div>
-
-            `).join("")}
-
-        </div>
-    `;
-}
-
-
-function showTopic(){
-
-    const topic =
-        document.getElementById("topicSelect").value;
-
-    const area =
-        document.getElementById("topicArea");
-
-    if(!topic){
-
-        showUnitOverview();
-        return;
-
-    }
-
-    area.classList.remove("hidden");
-
-    area.innerHTML = `
-
-        <h2>${topic}</h2>
-
-        <p>
-            This topic is part of <strong>${selectedUnit}</strong>
-            at <strong>${universities[selectedUniversity].name}</strong>.
-        </p>
-
-        <br>
-
-        <button class="primary" onclick="openCAT()">
-            CAT Questions
-        </button>
-
-        <button class="secondary" onclick="openRevision()">
-            Revision Questions
-        </button>
-
-    `;
-}
-
-
-/* =========================================================
-   CAT
-========================================================= */
-
-function openCAT(){
-
-    if(!selectedUnit){
-
-        alert("Please select a university and unit first.");
-        return;
-    }
-
-    const questions =
-        getQuestions(selectedUnit,30);
-
-    const area =
-        document.getElementById("contentArea");
-
-    area.classList.remove("hidden");
-
-    area.innerHTML = `
-
-        <h2>${selectedUnit} — CAT Practice</h2>
-
-        <p>
-            30-question original CAT-style practice.
-        </p>
-
-        <br>
-
-        ${questions.map((item,index)=>`
-
-            <div class="question">
-
-                <strong>
-                    ${index+1}. ${item.q}
-                </strong>
-
-                <br><br>
-
-                <button
-                    class="secondary"
-                    onclick="showAnswer(this)">
-                    Show Answer
-                </button>
-
-                <div class="answer">
-                    <strong>Answer:</strong>
-                    ${item.a}
-                </div>
-
-            </div>
-
-        `).join("")}
-
-    `;
-
-    window.scrollTo({
-        top:area.offsetTop,
-        behavior:"smooth"
-    });
-}
-
-
-/* =========================================================
-   REVISION
-========================================================= */
-
-function openRevision(){
-
-    if(!selectedUnit){
-
-        alert("Please select a university and unit first.");
-        return;
-    }
-
-    const questions =
-        getQuestions(selectedUnit,70);
-
-    const area =
-        document.getElementById("contentArea");
-
-    area.classList.remove("hidden");
-
-    area.innerHTML = `
-
-        <h2>${selectedUnit} — Revision Bank</h2>
-
-        <p>
-            Original revision questions covering the selected unit.
-        </p>
-
-        <br>
-
-        ${questions.map((item,index)=>`
-
-            <div class="question">
-
-                <strong>
-                    ${index+1}. ${item.q}
-                </strong>
-
-                <br><br>
-
-                <button
-                    class="secondary"
-                    onclick="showAnswer(this)">
-                    Show Answer
-                </button>
-
-                <div class="answer">
-                    <strong>Answer:</strong>
-                    ${item.a}
-                </div>
-
-            </div>
-
-        `).join("")}
-
-    `;
-
-    window.scrollTo({
-        top:area.offsetTop,
-        behavior:"smooth"
-    });
-}
-
-
-/* =========================================================
-   QUESTION GENERATOR
-========================================================= */
-
-function getQuestions(unit,count){
-
-    const base =
-        questionBank[unit] || [];
-
-    let result = [];
-
-    for(let i=0;i<count;i++){
-
-        result.push(
-            base[i % base.length]
-        );
-
-    }
-
-    return result;
-}
-
-
-/* =========================================================
-   ANSWERS
-========================================================= */
-
-function showAnswer(button){
-
-    const answer =
-        button.nextElementSibling;
-
-    if(answer.style.display === "block"){
-
-        answer.style.display = "none";
-
-        button.textContent =
-            "Show Answer";
-
-    }else{
-
-        answer.style.display = "block";
-
-        button.textContent =
-            "Hide Answer";
-    }
+document.getElementById("message").textContent =
+unit.value + " — " + topic.value;
 
 }
 
+});
 
-/* =========================================================
-   MOCK PAPERS
-========================================================= */
+function showCAT() {
 
-function openPapers(){
+if(!unit.value) {
+alert("Please select a unit first.");
+return;
+}
 
-    if(!selectedUnit){
+document.getElementById("content").innerHTML = `
+<h2>${unit.value} — CAT Practice</h2>
 
-        alert("Please select a university and unit first.");
-        return;
-    }
+<p>
+The full original CAT question bank will appear here.
+</p>
 
-    const area =
-        document.getElementById("contentArea");
+<div class="question">
+<b>Question 1</b>
+<p>
+This question bank will contain 30 unique CAT questions
+for ${unit.value}.
+</p>
 
-    area.classList.remove("hidden");
-
-    let papers = "";
-
-    for(let i=1;i<=35;i++){
-
-        papers += `
-
-            <div class="paper">
-
-                <div>
-
-                    <strong>
-                        ${selectedUnit} — Mock Paper ${i}
-                    </strong>
-
-                    <br>
-
-                    <span class="lock">
-                        Original practice paper
-                    </span>
-
-                </div>
-
-                <button
-                    class="orange"
-                    onclick="openPayment()">
-                    Unlock
-                </button>
-
-            </div>
-
-        `;
-
-    }
-
-    area.innerHTML = `
-
-        <h2>${selectedUnit} — Mock Papers</h2>
-
-        <p style="margin-bottom:15px;">
-            35 original university-style mock papers.
-            These are not official university past papers.
-        </p>
-
-        ${papers}
-
-    `;
-
-    window.scrollTo({
-        top:area.offsetTop,
-        behavior:"smooth"
-    });
+<div class="answer show">
+<b>Answer:</b>
+Original answer provided with each question.
+</div>
+</div>
+`;
 
 }
 
+function showRevision() {
 
-/* =========================================================
-   PROGRESS
-========================================================= */
+if(!unit.value) {
+alert("Please select a unit first.");
+return;
+}
 
-function showProgress(){
+document.getElementById("content").innerHTML = `
+<h2>${unit.value} — Revision Bank</h2>
 
-    const area =
-        document.getElementById("contentArea");
-
-    area.classList.remove("hidden");
-
-    area.innerHTML = `
-
-        <h2>My Study Progress</h2>
-
-        <p>
-            Your progress dashboard will track completed topics.
-        </p>
-
-        <br>
-
-        <div class="progress">
-            <div class="progress-bar" style="width:35%"></div>
-        </div>
-
-        <p>
-            Current demonstration progress: <strong>35%</strong>
-        </p>
-
-    `;
+<p>
+This section will contain 70+ original revision questions,
+organized by topic.
+</p>
+`;
 
 }
 
+function showMocks() {
 
-/* =========================================================
-   ACCESS / PAYMENT
-========================================================= */
-
-function openPayment(){
-
-    document.getElementById("paymentModal").style.display =
-        "flex";
-
+if(!unit.value) {
+alert("Please select a unit first.");
+return;
 }
 
+document.getElementById("content").innerHTML = `
+<h2>${unit.value} — Mock Papers</h2>
 
-function closeModal(){
-
-    document.getElementById("paymentModal").style.display =
-        "none";
-
-}
-
-
-function simulateUnlock(){
-
-    closeModal();
-
-    alert(
-        "Access system ready. Connect your real payment provider here before accepting payments."
-    );
+<p>
+More than 40 original practice paper sets will be available.
+</p>
+`;
 
 }
-
-
-/* =========================================================
-   INITIALIZATION
-========================================================= */
-
-document.getElementById("universitySelect")
-    .addEventListener("change",function(){
-
-        document.getElementById("contentArea")
-            .classList.add("hidden");
-
-    });
 
 </script>
 
