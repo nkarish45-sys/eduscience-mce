@@ -1031,5 +1031,47 @@ URL.revokeObjectURL(url);
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-https://dsymwauxzbdvokfxetnj.supabase.co/rest/v1/</body>
+https://dsymwauxzbdvokfxetnj.supabase.co/rest/v1/
+<div id="auth-section">
+  <h2>Student Account</h2>
+  <input id="email" type="email" placeholder="Email">
+  <input id="password" type="password" placeholder="Password">
+  <button onclick="signUp()">Register</button>
+  <button onclick="signIn()">Login</button>
+  <button onclick="signOut()">Logout</button>
+  <p id="auth-message"></p>
+</div>
+<script>
+async function signUp() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  const { error } = await supabaseClient.auth.signUp({
+    email: email,
+    password: password
+  });
+
+  document.getElementById("auth-message").textContent =
+    error ? error.message : "Registration successful. Check your email.";
+}
+
+async function signIn() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  const { error } = await supabaseClient.auth.signInWithPassword({
+    email: email,
+    password: password
+  });
+
+  document.getElementById("auth-message").textContent =
+    error ? error.message : "Login successful.";
+}
+
+async function signOut() {
+  await supabaseClient.auth.signOut();
+  document.getElementById("auth-message").textContent = "Logged out.";
+}
+</script>
+</body>
 </html>
