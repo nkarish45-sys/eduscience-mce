@@ -6,101 +6,143 @@
 <title>EduScience MCE Study Hub</title>
 
 <style>
-* {
-  box-sizing: border-box;
+*{
+    box-sizing:border-box;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f7fb;
-  color: #172033;
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f7fb;
+    color:#222;
 }
 
-header {
-  background: #123b6d;
-  color: white;
-  padding: 24px 15px;
-  text-align: center;
+header{
+    background:#123c69;
+    color:white;
+    padding:25px 15px;
+    text-align:center;
 }
 
-header h1 {
-  margin: 0 0 8px;
+header h1{
+    margin:0;
+    font-size:30px;
 }
 
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
+header p{
+    margin:8px 0 0;
 }
 
-.card {
-  background: white;
-  padding: 20px;
-  margin-bottom: 18px;
-  border-radius: 14px;
-  box-shadow: 0 3px 12px rgba(0,0,0,.08);
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.08);
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:12px;
+}
+
+.stat{
+    background:#eaf2fb;
+    padding:18px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.stat strong{
+    display:block;
+    font-size:25px;
+    color:#123c69;
+}
+
+label{
+    font-weight:bold;
+    display:block;
+    margin-top:12px;
+    margin-bottom:6px;
 }
 
 select,
-button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 6px;
-  border-radius: 8px;
-  border: 1px solid #ccd4df;
-  font-size: 15px;
+button{
+    width:100%;
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:16px;
 }
 
-button {
-  background: #123b6d;
-  color: white;
-  cursor: pointer;
-  border: none;
+button{
+    background:#123c69;
+    color:white;
+    border:none;
+    cursor:pointer;
+    margin-top:10px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 15px;
+button:hover{
+    opacity:.9;
 }
 
-.stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
-  gap: 10px;
+.button-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:10px;
 }
 
-.stat {
-  background: #eef4fb;
-  padding: 15px;
-  text-align: center;
-  border-radius: 10px;
+.question{
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:18px;
+    margin:15px 0;
+    background:#fafafa;
 }
 
-.stat strong {
-  display: block;
-  font-size: 24px;
-  color: #123b6d;
+.question h3{
+    margin-top:0;
 }
 
-.question {
-  border: 1px solid #e0e5ec;
-  padding: 15px;
-  margin: 12px 0;
-  border-radius: 10px;
+.option{
+    display:block;
+    background:white;
+    border:1px solid #ddd;
+    padding:10px;
+    border-radius:7px;
+    margin:7px 0;
+    cursor:pointer;
 }
 
-.answer {
-  display: none;
-  margin-top: 10px;
-  padding: 10px;
-  background: #edf8ee;
-  border-left: 4px solid #31924a;
+.answer{
+    display:none;
+    margin-top:12px;
+    padding:12px;
+    background:#e8f5e9;
+    border-left:5px solid #2e7d32;
+    border-radius:5px;
 }
 
-.answer.show {
-  display: block;
+.topic-title{
+    color:#123c69;
+}
+
+.hidden{
+    display:none;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    color:#666;
 }
 </style>
 </head>
@@ -108,101 +150,99 @@ button {
 <body>
 
 <header>
-<h1>EduScience MCE Study Hub</h1>
-<p>Mathematics & Chemistry Education Study Platform</p>
+    <h1>EduScience MCE Study Hub</h1>
+    <p>University Learning • CAT Practice • Revision • Mock Papers</p>
 </header>
 
 <div class="container">
 
 <div class="card">
-<h2>Select Your Study Area</h2>
+    <h2>Choose Your University and Course</h2>
 
-<div class="grid">
+    <label>University</label>
+    <select id="university">
+        <option value="">Select University</option>
+        <option>Egerton University</option>
+        <option>University of Nairobi</option>
+        <option>Kenyatta University</option>
+        <option>JKUAT</option>
+        <option>Maseno University</option>
+    </select>
 
-<div>
-<label>University</label>
-<select id="university">
-<option value="">Select University</option>
-<option>Egerton University</option>
-<option>University of Nairobi</option>
-<option>Kenyatta University</option>
-<option>JKUAT</option>
-<option>Maseno University</option>
-</select>
-</div>
+    <label>Course / Unit</label>
+    <select id="course">
+        <option value="">Select Course</option>
+        <option>MATH 132</option>
+        <option>CHEM 110</option>
+        <option>MATH 112</option>
+        <option>COMP 101</option>
+        <option>EPSC 121 - Psychology</option>
+        <option>EDFO 111 - History of Education</option>
+        <option>CHEM 120</option>
+    </select>
 
-<div>
-<label>Unit / Course</label>
-<select id="unit">
-<option value="">Select Unit</option>
-</select>
-</div>
-
-<div>
-<label>Topic</label>
-<select id="topic">
-<option value="">Select Topic</option>
-</select>
-</div>
-
-</div>
+    <label>Topic</label>
+    <select id="topic">
+        <option value="">Select Topic</option>
+    </select>
 </div>
 
 <div class="card">
-<div class="stats">
-<div class="stat">
-<strong>5</strong>
-Universities
-</div>
+    <div class="stats">
+        <div class="stat">
+            <strong>5</strong>
+            Universities
+        </div>
 
-<div class="stat">
-<strong>7</strong>
-Courses
-</div>
+        <div class="stat">
+            <strong>7</strong>
+            Courses
+        </div>
 
-<div class="stat">
-<strong>30</strong>
-CAT Questions
-</div>
+        <div class="stat">
+            <strong>30</strong>
+            CAT Questions
+        </div>
 
-<div class="stat">
-<strong>70+</strong>
-Revision Questions
-</div>
+        <div class="stat">
+            <strong>70+</strong>
+            Revision Questions
+        </div>
 
-<div class="stat">
-<strong>40+</strong>
-Mock Papers
-</div>
-</div>
+        <div class="stat">
+            <strong>40+</strong>
+            Mock Papers
+        </div>
+    </div>
 </div>
 
 <div class="card">
-<h2 id="courseTitle">Study Dashboard</h2>
-<p id="message">
-Select a university, unit and topic to begin studying.
-</p>
+    <h2>Study Options</h2>
 
-<button onclick="showCAT()">CAT Practice</button>
-<button onclick="showRevision()">Revision Questions</button>
-<button onclick="showMocks()">Mock Papers</button>
+    <div class="button-row">
+        <button onclick="showCAT()">CAT Practice</button>
+        <button onclick="showRevision()">Revision Questions</button>
+        <button onclick="showMock()">Mock Papers</button>
+    </div>
 </div>
 
-<div id="content" class="card">
-<h2>Welcome</h2>
-<p>
-Choose your university and course above to access original
-study materials.
-</p>
-</div>
+<div id="questionArea"></div>
 
 </div>
+
+<footer>
+    EduScience MCE Study Hub — Original practice materials
+</footer>
 
 <script>
 
-const courses = {
+/* =========================================================
+   COURSE TOPICS
+========================================================= */
 
-"MATH 132": [
+const courseTopics = {
+
+"MATH 132":[
 "Equation of a straight line",
 "Equation of a circle",
 "Parabola",
@@ -214,16 +254,16 @@ const courses = {
 "Equation of a plane using vectors and Cartesian coordinates"
 ],
 
-"CHEM 110": [
+"CHEM 110":[
 "History of the atom",
-"Stoichiometry — mole concept",
+"Stoichiometry - mole concept",
 "Quantum theory and atomic structures",
 "Trends in physical properties of group elements",
 "Graphic materials",
 "Chemical bonding"
 ],
 
-"MATH 112": [
+"MATH 112":[
 "Sequence and series",
 "Trigonometry",
 "Set theory",
@@ -235,28 +275,32 @@ const courses = {
 "The binomial theorem"
 ],
 
-"COMP 101": [
+"COMP 101":[
 "Nature and functions of computers",
-"Hardware, software, firmware and power",
+"Hardware",
+"Software",
+"Firmware",
+"Power",
 "Data processing",
 "Information systems",
-"CPU and motherboard",
-"RAM and ROM",
+"CPU",
+"Motherboard",
+"RAM",
+"ROM",
 "Hard drive",
-"Input/output adaptor",
-"Removable storage devices",
-"Computer network and Internet",
-"Windows-based operating environment",
+"Input and output devices",
+"Removable storage",
+"Computer networks",
+"Internet",
+"Windows operating environment",
 "Electronic mail",
 "World Wide Web",
-"CAT 1",
 "Word processing",
 "Database",
-"Electronic spreadsheets",
-"CAT 2"
+"Electronic spreadsheets"
 ],
 
-"EPSC 121": [
+"EPSC 121 - Psychology":[
 "Introduction to Psychology",
 "Psychology as a Science",
 "Goals of Psychology",
@@ -265,40 +309,41 @@ const courses = {
 "Structuralism",
 "Functionalism",
 "Behaviourism",
-"Humanistic perspective",
-"Cognitive perspective",
-"Biological perspective",
-"Eclectic perspective",
+"Humanistic Perspective",
+"Cognitive Perspective",
+"Biological Perspective",
+"Eclectic Perspective",
 "Heredity and Environment",
 "Biological Basis of Behaviour",
 "Nervous System",
 "CNS and PNS",
 "Neurons",
-"Autonomic nervous system",
-"Sympathetic and parasympathetic divisions",
-"Endocrine system and hormones",
-"Brain and main divisions",
-"Spinal cord",
+"Autonomic Nervous System",
+"Sympathetic and Parasympathetic Divisions",
+"Endocrine System",
+"Brain and Main Divisions",
+"Spinal Cord",
 "Motivation",
-"Intrinsic and extrinsic motivation",
-"Maslow’s hierarchy of needs"
+"Intrinsic and Extrinsic Motivation",
+"Maslow's Hierarchy of Needs"
 ],
 
-"EDFO 111": [
-"History and development of education",
-"Foundations of education",
-"Spartan education",
-"Athenian education",
-"Comparison of Spartan and Athenian education",
-"Religious foundations of education",
-"Islamic education",
-"Jewish education",
-"Christian education"
+"EDFO 111 - History of Education":[
+"History and Development of Education",
+"Foundations of Education",
+"Spartan Education",
+"Athenian Education",
+"Spartan and Athenian Education",
+"Religious Foundations of Education",
+"Islamic Education",
+"Jewish Education",
+"Christian Education"
 ],
 
-"CHEM 120": [
+"CHEM 120":[
 "Gases and Kinetic Molecular Theory",
-"Chemical Equilibrium and Ionic Equilibrium",
+"Chemical Equilibrium",
+"Ionic Equilibrium",
 "Acids and Bases",
 "Thermochemistry",
 "Chemical Kinetics",
@@ -307,123 +352,1129 @@ const courses = {
 
 };
 
-const university = document.getElementById("university");
-const unit = document.getElementById("unit");
-const topic = document.getElementById("topic");
 
-university.addEventListener("change", function() {
+/* =========================================================
+   MATH 132 QUESTION BANK
+   30 CAT + 70 REVISION
+========================================================= */
 
-unit.innerHTML =
-'<option value="">Select Unit</option>';
+const math132CAT = [
 
-Object.keys(courses).forEach(function(course) {
+{
+topic:"Equation of a straight line",
+q:"Find the gradient of the line passing through (2,3) and (6,11).",
+options:["1","2","3","4"],
+answer:"2",
+explanation:"Gradient = (11 - 3)/(6 - 2) = 8/4 = 2."
+},
 
-unit.innerHTML +=
-`<option value="${course}">${course}</option>`;
+{
+topic:"Equation of a straight line",
+q:"Find the equation of the line with gradient 3 passing through (2,5).",
+options:["y = 3x + 1","y = 3x - 1","y = 2x + 3","y = x + 3"],
+answer:"y = 3x - 1",
+explanation:"Using y - 5 = 3(x - 2), y = 3x - 1."
+},
+
+{
+topic:"Equation of a straight line",
+q:"Find the x-intercept of the line 2x + y - 8 = 0.",
+options:["2","3","4","8"],
+answer:"4",
+explanation:"At the x-intercept, y = 0. Therefore 2x - 8 = 0, giving x = 4."
+},
+
+{
+topic:"Equation of a straight line",
+q:"What is the gradient of a line perpendicular to a line with gradient 2?",
+options:["2","-2","1/2","-1/2"],
+answer:"-1/2",
+explanation:"For perpendicular lines, m1m2 = -1."
+},
+
+{
+topic:"Equation of a circle",
+q:"Find the centre of the circle x² + y² - 6x + 4y - 12 = 0.",
+options:["(3,-2)","(-3,2)","(3,2)","(-3,-2)"],
+answer:"(3,-2)",
+explanation:"Complete the square: (x - 3)² + (y + 2)² = 25."
+},
+
+{
+topic:"Equation of a circle",
+q:"Find the radius of (x - 2)² + (y + 3)² = 49.",
+options:["5","6","7","49"],
+answer:"7",
+explanation:"The radius is √49 = 7."
+},
+
+{
+topic:"Equation of a circle",
+q:"Which equation represents a circle with centre (4,-1) and radius 3?",
+options:[
+"(x-4)²+(y+1)²=9",
+"(x+4)²+(y-1)²=9",
+"(x-4)²+(y-1)²=3",
+"(x+4)²+(y+1)²=3"
+],
+answer:"(x-4)²+(y+1)²=9",
+explanation:"The standard form is (x-h)²+(y-k)²=r²."
+},
+
+{
+topic:"Parabola",
+q:"Find the vertex of y = (x - 3)² + 2.",
+options:["(3,2)","(-3,2)","(3,-2)","(-3,-2)"],
+answer:"(3,2)",
+explanation:"The vertex form is y=(x-h)²+k."
+},
+
+{
+topic:"Parabola",
+q:"What is the axis of symmetry of y = (x + 4)² - 5?",
+options:["x = 4","x = -4","y = 4","y = -5"],
+answer:"x = -4",
+explanation:"The axis of symmetry is x = h."
+},
+
+{
+topic:"Parabola",
+q:"Does the parabola y = x² + 4 open upward or downward?",
+options:["Upward","Downward","Left","Right"],
+answer:"Upward",
+explanation:"The coefficient of x² is positive."
+},
+
+{
+topic:"Hyperbola",
+q:"Which equation represents a rectangular hyperbola?",
+options:[
+"x²+y²=1",
+"xy=4",
+"y=x²",
+"x+y=4"
+],
+answer:"xy=4",
+explanation:"A rectangular hyperbola can be written xy = c."
+},
+
+{
+topic:"Hyperbola",
+q:"For xy = 12, find y when x = 3.",
+options:["2","3","4","6"],
+answer:"4",
+explanation:"3y = 12, so y = 4."
+},
+
+{
+topic:"Hyperbola",
+q:"What happens to y in xy = 20 when x increases?",
+options:[
+"y increases proportionally",
+"y decreases",
+"y remains constant",
+"y becomes zero"
+],
+answer:"y decreases",
+explanation:"x and y are inversely proportional."
+},
+
+{
+topic:"Ellipse",
+q:"What is the major semi-axis of x²/25 + y²/9 = 1?",
+options:["3","5","9","25"],
+answer:"5",
+explanation:"The larger denominator is 25, so the semi-major axis is √25 = 5."
+},
+
+{
+topic:"Ellipse",
+q:"What is the semi-minor axis of x²/16 + y²/4 = 1?",
+options:["2","4","8","16"],
+answer:"2",
+explanation:"The smaller denominator is 4, giving √4 = 2."
+},
+
+{
+topic:"Ellipse",
+q:"Which conic has two foci?",
+options:["Circle","Ellipse","Straight line","Parabola"],
+answer:"Ellipse",
+explanation:"An ellipse is defined using two foci."
+},
+
+{
+topic:"Vector operations",
+q:"If a=(2,3) and b=(4,1), find a+b.",
+options:["(6,4)","(2,2)","(8,3)","(6,2)"],
+answer:"(6,4)",
+explanation:"Add corresponding components."
+},
+
+{
+topic:"Vector operations",
+q:"If a=(5,-2) and b=(1,4), find a-b.",
+options:["(4,-6)","(6,2)","(4,2)","(6,-6)"],
+answer:"(4,-6)",
+explanation:"(5-1, -2-4) = (4,-6)."
+},
+
+{
+topic:"Vector operations",
+q:"Find the magnitude of vector (3,4).",
+options:["3","4","5","7"],
+answer:"5",
+explanation:"Magnitude = √(3²+4²)=5."
+},
+
+{
+topic:"Vector operations",
+q:"Find 3(2,-1).",
+options:["(6,-3)","(5,-1)","(6,3)","(2,-3)"],
+answer:"(6,-3)",
+explanation:"Multiply each component by 3."
+},
+
+{
+topic:"Vectors in Cartesian coordinates",
+q:"Find the vector from A(2,3) to B(7,5).",
+options:["(5,2)","(9,8)","(-5,-2)","(2,5)"],
+answer:"(5,2)",
+explanation:"AB = B - A = (7-2,5-3)."
+},
+
+{
+topic:"Vectors in Cartesian coordinates",
+q:"Find the magnitude of vector (-6,8).",
+options:["8","10","12","14"],
+answer:"10",
+explanation:"√(36+64)=√100=10."
+},
+
+{
+topic:"Vectors in Cartesian coordinates",
+q:"Find the dot product of (2,3) and (4,5).",
+options:["19","20","22","23"],
+answer:"23",
+explanation:"2(4)+3(5)=8+15=23."
+},
+
+{
+topic:"Equation of a line using vectors and Cartesian coordinates",
+q:"A line has position vector r=(1,2)+t(3,4). What is its direction vector?",
+options:["(1,2)","(3,4)","(4,6)","(2,1)"],
+answer:"(3,4)",
+explanation:"The coefficient of t is the direction vector."
+},
+
+{
+topic:"Equation of a line using vectors and Cartesian coordinates",
+q:"For r=(2,1)+t(4,-2), find the point when t=2.",
+options:["(10,-3)","(6,-1)","(8,-4)","(4,2)"],
+answer:"(10,-3)",
+explanation:"(2,1)+2(4,-2)=(10,-3)."
+},
+
+{
+topic:"Equation of a line using vectors and Cartesian coordinates",
+q:"Find the Cartesian gradient of a line with direction vector (2,6).",
+options:["2","3","4","6"],
+answer:"3",
+explanation:"Gradient = change in y/change in x = 6/2 = 3."
+},
+
+{
+topic:"Equation of a plane using vectors and Cartesian coordinates",
+q:"Which form represents a plane using a normal vector n?",
+options:[
+"n·(r-a)=0",
+"n×r=1",
+"r+n=0",
+"n/r=0"
+],
+answer:"n·(r-a)=0",
+explanation:"This is the vector equation of a plane."
+},
+
+{
+topic:"Equation of a plane using vectors and Cartesian coordinates",
+q:"For plane 2x+3y+4z=12, what is its normal vector?",
+options:["(2,3,4)","(12,3,4)","(4,3,2)","(1,1,1)"],
+answer:"(2,3,4)",
+explanation:"The coefficients of x, y and z form the normal vector."
+},
+
+{
+topic:"Equation of a plane using vectors and Cartesian coordinates",
+q:"Which equation represents a plane parallel to 2x+3y+4z=7?",
+options:[
+"2x+3y+4z=12",
+"x+y+z=12",
+"2x+4y+3z=7",
+"3x+2y+4z=7"
+],
+answer:"2x+3y+4z=12",
+explanation:"Parallel planes have proportional normal vectors."
+},
+
+{
+topic:"Equation of a plane using vectors and Cartesian coordinates",
+q:"For the plane x+2y+3z=6, what is the coefficient of z?",
+options:["1","2","3","6"],
+answer:"3",
+explanation:"The z coefficient is 3."
+}
+
+];
+
+
+/* =========================================================
+   MATH 132 REVISION QUESTIONS
+========================================================= */
+
+const math132Revision = [
+
+{
+topic:"Equation of a straight line",
+q:"Find the gradient between (1,2) and (5,14).",
+answer:"3",
+explanation:"m=(14-2)/(5-1)=12/4=3."
+},
+
+{
+topic:"Equation of a straight line",
+q:"Find the equation of the line with gradient 2 through (1,4).",
+answer:"y=2x+2",
+explanation:"y-4=2(x-1), so y=2x+2."
+},
+
+{
+topic:"Equation of a straight line",
+q:"Find the y-intercept of y=5x-7.",
+answer:"-7",
+explanation:"The constant term is the y-intercept."
+},
+
+{
+topic:"Equation of a straight line",
+q:"Find the gradient of 4x+2y=10.",
+answer:"-2",
+explanation:"2y=-4x+10, so y=-2x+5."
+},
+
+{
+topic:"Equation of a straight line",
+q:"Find the x-intercept of 3x+y=12.",
+answer:"4",
+explanation:"Put y=0: 3x=12."
+},
+
+{
+topic:"Equation of a straight line",
+q:"Are y=2x+1 and y=2x-7 parallel?",
+answer:"Yes",
+explanation:"They have equal gradients."
+},
+
+{
+topic:"Equation of a straight line",
+q:"Are y=3x+1 and y=-(1/3)x+4 perpendicular?",
+answer:"Yes",
+explanation:"3(-1/3)=-1."
+},
+
+{
+topic:"Equation of a straight line",
+q:"Find the midpoint of (2,4) and (8,10).",
+answer:"(5,7)",
+explanation:"Midpoint=((2+8)/2,(4+10)/2)=(5,7)."
+},
+
+{
+topic:"Equation of a circle",
+q:"Find the radius of x²+y²=36.",
+answer:"6",
+explanation:"r²=36."
+},
+
+{
+topic:"Equation of a circle",
+q:"Find the centre of (x+2)²+(y-5)²=16.",
+answer:"(-2,5)",
+explanation:"The centre is (h,k)=(-2,5)."
+},
+
+{
+topic:"Equation of a circle",
+q:"Find the diameter of a circle with radius 9.",
+answer:"18",
+explanation:"Diameter=2r."
+},
+
+{
+topic:"Equation of a circle",
+q:"Find the radius of (x-1)²+(y+4)²=25.",
+answer:"5",
+explanation:"r=√25."
+},
+
+{
+topic:"Equation of a circle",
+q:"Does (3,4) lie on x²+y²=25?",
+answer:"Yes",
+explanation:"3²+4²=9+16=25."
+},
+
+{
+topic:"Parabola",
+q:"Find the vertex of y=(x-5)².",
+answer:"(5,0)",
+explanation:"The vertex is (5,0)."
+},
+
+{
+topic:"Parabola",
+q:"Find the vertex of y=(x+2)²+7.",
+answer:"(-2,7)",
+explanation:"x+2=x-(-2)."
+},
+
+{
+topic:"Parabola",
+q:"Does y=-x² open upward or downward?",
+answer:"Downward",
+explanation:"The x² coefficient is negative."
+},
+
+{
+topic:"Parabola",
+q:"Find the axis of symmetry of y=(x-6)²-4.",
+answer:"x=6",
+explanation:"The axis is x=h."
+},
+
+{
+topic:"Parabola",
+q:"Find the y-intercept of y=x²-4.",
+answer:"-4",
+explanation:"At x=0, y=-4."
+},
+
+{
+topic:"Hyperbola",
+q:"Find y if xy=30 and x=5.",
+answer:"6",
+explanation:"5y=30."
+},
+
+{
+topic:"Hyperbola",
+q:"Find x if xy=24 and y=6.",
+answer:"4",
+explanation:"6x=24."
+},
+
+{
+topic:"Hyperbola",
+q:"What are the asymptotes of xy=9?",
+answer:"x=0 and y=0",
+explanation:"The coordinate axes are the asymptotes."
+},
+
+{
+topic:"Hyperbola",
+q:"Is xy=5 a direct or inverse relationship?",
+answer:"Inverse",
+explanation:"y=5/x."
+},
+
+{
+topic:"Ellipse",
+q:"Find the semi-major axis of x²/36+y²/16=1.",
+answer:"6",
+explanation:"√36=6."
+},
+
+{
+topic:"Ellipse",
+q:"Find the semi-minor axis of x²/49+y²/25=1.",
+answer:"5",
+explanation:"√25=5."
+},
+
+{
+topic:"Ellipse",
+q:"Find the centre of (x-2)²/16+(y+3)²/9=1.",
+answer:"(2,-3)",
+explanation:"The centre is (h,k)."
+},
+
+{
+topic:"Ellipse",
+q:"What is the major axis length if the semi-major axis is 8?",
+answer:"16",
+explanation:"Major axis=2a."
+},
+
+{
+topic:"Vector operations",
+q:"Find (1,2)+(3,5).",
+answer:"(4,7)",
+explanation:"Add corresponding components."
+},
+
+{
+topic:"Vector operations",
+q:"Find (7,3)-(2,1).",
+answer:"(5,2)",
+explanation:"Subtract corresponding components."
+},
+
+{
+topic:"Vector operations",
+q:"Find 4(2,-3).",
+answer:"(8,-12)",
+explanation:"Multiply every component by 4."
+},
+
+{
+topic:"Vector operations",
+q:"Find the magnitude of (5,12).",
+answer:"13",
+explanation:"√(25+144)=13."
+},
+
+{
+topic:"Vector operations",
+q:"Find the dot product of (1,4) and (3,2).",
+answer:"11",
+explanation:"1(3)+4(2)=11."
+},
+
+{
+topic:"Vector operations",
+q:"Are (2,4) and (1,2) parallel?",
+answer:"Yes",
+explanation:"One vector is twice the other."
+},
+
+{
+topic:"Vectors in Cartesian coordinates",
+q:"Find AB when A=(1,1) and B=(4,5).",
+answer:"(3,4)",
+explanation:"AB=B-A."
+},
+
+{
+topic:"Vectors in Cartesian coordinates",
+q:"Find the magnitude of (8,15).",
+answer:"17",
+explanation:"√(64+225)=17."
+},
+
+{
+topic:"Vectors in Cartesian coordinates",
+q:"Find the unit vector in the direction of (3,4).",
+answer:"(3/5,4/5)",
+explanation:"Divide by magnitude 5."
+},
+
+{
+topic:"Vectors in Cartesian coordinates",
+q:"Find the distance between (0,0) and (6,8).",
+answer:"10",
+explanation:"Distance=√(36+64)=10."
+},
+
+{
+topic:"Vectors in Cartesian coordinates",
+q:"Find the position vector of P(4,-2).",
+answer:"4i-2j",
+explanation:"The position vector is 4i-2j."
+},
+
+{
+topic:"Equation of a line using vectors and Cartesian coordinates",
+q:"Write the vector equation of a line through (1,2) with direction (3,5).",
+answer:"r=(1,2)+t(3,5)",
+explanation:"Point + parameter × direction."
+},
+
+{
+topic:"Equation of a line using vectors and Cartesian coordinates",
+q:"For r=(2,3)+t(1,4), find the point at t=3.",
+answer:"(5,15)",
+explanation:"(2,3)+3(1,4)=(5,15)."
+},
+
+{
+topic:"Equation of a line using vectors and Cartesian coordinates",
+q:"Find the gradient of direction vector (4,8).",
+answer:"2",
+explanation:"m=8/4=2."
+},
+
+{
+topic:"Equation of a line using vectors and Cartesian coordinates",
+q:"Find the direction vector between (2,3) and (7,9).",
+answer:"(5,6)",
+explanation:"Subtract the first point from the second."
+},
+
+{
+topic:"Equation of a line using vectors and Cartesian coordinates",
+q:"Are direction vectors (2,6) and (1,3) parallel?",
+answer:"Yes",
+explanation:"(2,6)=2(1,3)."
+},
+
+{
+topic:"Equation of a plane using vectors and Cartesian coordinates",
+q:"Find the normal vector of 5x+2y-z=8.",
+answer:"(5,2,-1)",
+explanation:"The coefficients form the normal vector."
+},
+
+{
+topic:"Equation of a plane using vectors and Cartesian coordinates",
+q:"Find the z-intercept of x+2y+z=6.",
+answer:"6",
+explanation:"Put x=0 and y=0."
+},
+
+{
+topic:"Equation of a plane using vectors and Cartesian coordinates",
+q:"Is 2x+4y+6z=12 parallel to x+2y+3z=4?",
+answer:"Yes",
+explanation:"The normal vectors are proportional."
+},
+
+{
+topic:"Equation of a plane using vectors and Cartesian coordinates",
+q:"Find the x-intercept of 2x+y+z=10.",
+answer:"5",
+explanation:"Put y=z=0, giving 2x=10."
+},
+
+{
+topic:"Equation of a plane using vectors and Cartesian coordinates",
+q:"Find the y-intercept of x+3y+z=9.",
+answer:"3",
+explanation:"Put x=z=0."
+},
+
+{
+topic:"Equation of a plane using vectors and Cartesian coordinates",
+q:"What is the normal vector to x-4y+2z=5?",
+answer:"(1,-4,2)",
+explanation:"Use the coefficients of x,y,z."
+},
+
+{
+topic:"Equation of a straight line",
+q:"Find the distance between (1,2) and (4,6).",
+answer:"5",
+explanation:"√(3²+4²)=5."
+},
+
+{
+topic:"Equation of a circle",
+q:"Find the circumference of a circle with radius 7.",
+answer:"14π",
+explanation:"C=2πr."
+},
+
+{
+topic:"Equation of a circle",
+q:"Find the area of a circle with radius 5.",
+answer:"25π",
+explanation:"A=πr²."
+},
+
+{
+topic:"Parabola",
+q:"Find y when x=3 for y=x²+2x.",
+answer:"15",
+explanation:"9+6=15."
+},
+
+{
+topic:"Parabola",
+q:"Find the x-intercepts of y=x²-9.",
+answer:"x=3 and x=-3",
+explanation:"x²=9."
+},
+
+{
+topic:"Hyperbola",
+q:"Find y when x=4 in y=20/x.",
+answer:"5",
+explanation:"20/4=5."
+},
+
+{
+topic:"Hyperbola",
+q:"Find x when y=2 in xy=18.",
+answer:"9",
+explanation:"2x=18."
+},
+
+{
+topic:"Ellipse",
+q:"Find the major axis length when a=10.",
+answer:"20",
+explanation:"Major axis=2a."
+},
+
+{
+topic:"Ellipse",
+q:"Find the minor axis length when b=4.",
+answer:"8",
+explanation:"Minor axis=2b."
+},
+
+{
+topic:"Vector operations",
+q:"Find the magnitude of (9,12).",
+answer:"15",
+explanation:"√(81+144)=15."
+},
+
+{
+topic:"Vector operations",
+q:"Find 2(3,4)+(1,2).",
+answer:"(7,10)",
+explanation:"2(3,4)=(6,8), then add (1,2)."
+},
+
+{
+topic:"Vectors in Cartesian coordinates",
+q:"Find the vector from (5,7) to (9,10).",
+answer:"(4,3)",
+explanation:"(9-5,10-7)."
+},
+
+{
+topic:"Vectors in Cartesian coordinates",
+q:"Find the dot product of (2,-1) and (3,4).",
+answer:"2",
+explanation:"2(3)+(-1)(4)=2."
+},
+
+{
+topic:"Equation of a line using vectors and Cartesian coordinates",
+q:"Find the point on r=(1,1)+t(2,3) when t=4.",
+answer:"(9,13)",
+explanation:"(1,1)+4(2,3)=(9,13)."
+},
+
+{
+topic:"Equation of a line using vectors and Cartesian coordinates",
+q:"What is the direction vector of x=2+3t, y=5-t?",
+answer:"(3,-1)",
+explanation:"The coefficients of t form the direction vector."
+},
+
+{
+topic:"Equation of a plane using vectors and Cartesian coordinates",
+q:"Find the normal vector of 3x-2y+5z=10.",
+answer:"(3,-2,5)",
+explanation:"The coefficients form the normal vector."
+},
+
+{
+topic:"Equation of a plane using vectors and Cartesian coordinates",
+q:"Find the z-intercept of 2x+y+4z=20.",
+answer:"5",
+explanation:"Put x=y=0: 4z=20."
+},
+
+{
+topic:"Equation of a plane using vectors and Cartesian coordinates",
+q:"Find the x-intercept of 4x+2y+z=16.",
+answer:"4",
+explanation:"Put y=z=0."
+},
+
+{
+topic:"Equation of a plane using vectors and Cartesian coordinates",
+q:"Find the y-intercept of 2x+5y+z=15.",
+answer:"3",
+explanation:"Put x=z=0: 5y=15."
+},
+
+{
+topic:"Equation of a straight line",
+q:"Find the gradient of a line through (-2,3) and (2,11).",
+answer:"2",
+explanation:"m=(11-3)/(2-(-2))=8/4=2."
+},
+
+{
+topic:"Equation of a straight line",
+q:"Find the equation of a line with gradient -2 passing through (1,5).",
+answer:"y=-2x+7",
+explanation:"y-5=-2(x-1)."
+},
+
+{
+topic:"Equation of a circle",
+q:"Find the radius of x²+y²-10x-6y=0.",
+answer:"√34",
+explanation:"Completing squares gives (x-5)²+(y-3)²=34."
+},
+
+{
+topic:"Parabola",
+q:"Find the vertex of y=x²-6x+9.",
+answer:"(3,0)",
+explanation:"y=(x-3)²."
+},
+
+{
+topic:"Ellipse",
+q:"Find the centre of x²/25+(y-2)²/9=1.",
+answer:"(0,2)",
+explanation:"The centre is (0,2)."
+},
+
+{
+topic:"Vector operations",
+q:"Find the magnitude of (-5,12).",
+answer:"13",
+explanation:"√(25+144)=13."
+},
+
+{
+topic:"Vectors in Cartesian coordinates",
+q:"Find the midpoint of A(3,5) and B(9,13).",
+answer:"(6,9)",
+explanation:"Average the coordinates."
+},
+
+{
+topic:"Equation of a line using vectors and Cartesian coordinates",
+q:"Write the Cartesian equation of a line with gradient 2 and y-intercept 5.",
+answer:"y=2x+5",
+explanation:"Use y=mx+c."
+},
+
+{
+topic:"Equation of a plane using vectors and Cartesian coordinates",
+q:"Does point (1,2,3) lie on x+y+z=6?",
+answer:"Yes",
+explanation:"1+2+3=6."
+}
+
+];
+
+
+/* =========================================================
+   COMBINE QUESTION BANK
+========================================================= */
+
+const questionBank = {
+    "MATH 132":{
+        cat:math132CAT,
+        revision:math132Revision
+    }
+};
+
+
+/* =========================================================
+   LINKED DROPDOWNS
+========================================================= */
+
+const universitySelect = document.getElementById("university");
+const courseSelect = document.getElementById("course");
+const topicSelect = document.getElementById("topic");
+
+courseSelect.addEventListener("change", function(){
+
+    const selectedCourse = this.value;
+
+    topicSelect.innerHTML =
+        '<option value="">Select Topic</option>';
+
+    if(courseTopics[selectedCourse]){
+
+        courseTopics[selectedCourse].forEach(function(topic){
+
+            const option = document.createElement("option");
+
+            option.value = topic;
+            option.textContent = topic;
+
+            topicSelect.appendChild(option);
+
+        });
+
+    }
 
 });
 
-topic.innerHTML =
-'<option value="">Select Topic</option>';
 
-});
+/* =========================================================
+   DISPLAY QUESTIONS
+========================================================= */
 
-unit.addEventListener("change", function() {
+function getSelectedTopic(){
 
-const selected = courses[unit.value];
-
-topic.innerHTML =
-'<option value="">Select Topic</option>';
-
-if(selected) {
-
-selected.forEach(function(item) {
-
-topic.innerHTML +=
-`<option value="${item}">${item}</option>`;
-
-});
+    return topicSelect.value;
 
 }
 
-document.getElementById("courseTitle").textContent =
-unit.value || "Study Dashboard";
 
-});
+function filterQuestions(questions){
 
-topic.addEventListener("change", function() {
+    const selectedTopic = getSelectedTopic();
 
-if(topic.value) {
+    if(!selectedTopic){
+        return questions;
+    }
 
-document.getElementById("message").textContent =
-unit.value + " — " + topic.value;
-
-}
-
-});
-
-function showCAT() {
-
-if(!unit.value) {
-alert("Please select a unit first.");
-return;
-}
-
-document.getElementById("content").innerHTML = `
-<h2>${unit.value} — CAT Practice</h2>
-
-<p>
-The full original CAT question bank will appear here.
-</p>
-
-<div class="question">
-<b>Question 1</b>
-<p>
-This question bank will contain 30 unique CAT questions
-for ${unit.value}.
-</p>
-
-<div class="answer show">
-<b>Answer:</b>
-Original answer provided with each question.
-</div>
-</div>
-`;
+    return questions.filter(function(question){
+        return question.topic === selectedTopic;
+    });
 
 }
 
-function showRevision() {
 
-if(!unit.value) {
-alert("Please select a unit first.");
-return;
+function showQuestions(questions,title){
+
+    const area = document.getElementById("questionArea");
+
+    area.innerHTML = "";
+
+    const wrapper = document.createElement("div");
+
+    wrapper.className = "card";
+
+    const heading = document.createElement("h2");
+
+    heading.textContent = title;
+
+    wrapper.appendChild(heading);
+
+    const course = courseSelect.value;
+
+    if(!questionBank[course]){
+
+        const message = document.createElement("p");
+
+        message.textContent =
+            "The expanded question bank for this course will be added next.";
+
+        wrapper.appendChild(message);
+
+        area.appendChild(wrapper);
+
+        return;
+    }
+
+
+    const filtered = filterQuestions(questions);
+
+
+    if(filtered.length === 0){
+
+        const message = document.createElement("p");
+
+        message.textContent =
+            "No questions found for this topic.";
+
+        wrapper.appendChild(message);
+
+        area.appendChild(wrapper);
+
+        return;
+    }
+
+
+    filtered.forEach(function(question,index){
+
+        const box = document.createElement("div");
+
+        box.className = "question";
+
+
+        const number = document.createElement("h3");
+
+        number.textContent =
+            (index + 1) + ". " + question.q;
+
+        box.appendChild(number);
+
+
+        if(question.options){
+
+            question.options.forEach(function(option){
+
+                const label = document.createElement("label");
+
+                label.className = "option";
+
+                label.innerHTML =
+                    '<input type="radio" name="question' +
+                    index +
+                    '" value="' +
+                    option.replace(/"/g,"&quot;") +
+                    '"> ' +
+                    option;
+
+                box.appendChild(label);
+
+            });
+
+
+            const checkButton =
+                document.createElement("button");
+
+            checkButton.textContent =
+                "Show Answer";
+
+            checkButton.onclick = function(){
+
+                answerBox.style.display = "block";
+
+            };
+
+            box.appendChild(checkButton);
+
+        }else{
+
+            const answerButton =
+                document.createElement("button");
+
+            answerButton.textContent =
+                "Show Answer";
+
+            answerButton.onclick = function(){
+
+                answerBox.style.display = "block";
+
+            };
+
+            box.appendChild(answerButton);
+
+        }
+
+
+        const answerBox =
+            document.createElement("div");
+
+        answerBox.className = "answer";
+
+        answerBox.innerHTML =
+            "<strong>Answer:</strong> " +
+            question.answer +
+            "<br><br>" +
+            "<strong>Working / Explanation:</strong> " +
+            question.explanation;
+
+        box.appendChild(answerBox);
+
+        wrapper.appendChild(box);
+
+    });
+
+
+    area.appendChild(wrapper);
+
 }
 
-document.getElementById("content").innerHTML = `
-<h2>${unit.value} — Revision Bank</h2>
 
-<p>
-This section will contain 70+ original revision questions,
-organized by topic.
-</p>
-`;
+/* =========================================================
+   CAT
+========================================================= */
+
+function showCAT(){
+
+    const course = courseSelect.value;
+
+    if(course === "MATH 132"){
+
+        showQuestions(
+            math132CAT,
+            "MATH 132 — CAT Practice"
+        );
+
+    }else{
+
+        showQuestions(
+            [],
+            "CAT Practice"
+        );
+
+    }
 
 }
 
-function showMocks() {
 
-if(!unit.value) {
-alert("Please select a unit first.");
-return;
+/* =========================================================
+   REVISION
+========================================================= */
+
+function showRevision(){
+
+    const course = courseSelect.value;
+
+    if(course === "MATH 132"){
+
+        showQuestions(
+            math132Revision,
+            "MATH 132 — Revision Questions"
+        );
+
+    }else{
+
+        showQuestions(
+            [],
+            "Revision Questions"
+        );
+
+    }
+
 }
 
-document.getElementById("content").innerHTML = `
-<h2>${unit.value} — Mock Papers</h2>
 
-<p>
-More than 40 original practice paper sets will be available.
-</p>
-`;
+/* =========================================================
+   MOCK PAPERS
+========================================================= */
+
+function showMock(){
+
+    const area =
+        document.getElementById("questionArea");
+
+    area.innerHTML = "";
+
+    const box =
+        document.createElement("div");
+
+    box.className = "card";
+
+    box.innerHTML = `
+        <h2>Original Mock Papers</h2>
+        <p>
+        Original practice papers will be added to this section.
+        They are not presented as official university past papers.
+        </p>
+
+        <button onclick="alert('MATH 132 Mock Paper 1 will be added in the next expansion.')">
+        MATH 132 Mock Paper 1
+        </button>
+
+        <button onclick="alert('More MATH 132 mock papers will be added.')">
+        MATH 132 Mock Paper 2
+        </button>
+
+        <button onclick="alert('More MATH 132 mock papers will be added.')">
+        MATH 132 Mock Paper 3
+        </button>
+    `;
+
+    area.appendChild(box);
 
 }
 
