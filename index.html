@@ -2,938 +2,1027 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>EduScience MCE Study Hub</title>
 
 <style>
-
-*{
-box-sizing:border-box;
-}
-
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#f4f7fb;
-color:#222;
-}
-
-header{
-background:#123c69;
-color:white;
-padding:25px 15px;
-text-align:center;
-}
-
-header h1{
-margin:0;
-font-size:30px;
-}
-
-header p{
-margin:8px 0 0;
-}
-
-.container{
-max-width:1100px;
-margin:auto;
-padding:20px;
-}
-
-.card{
-background:white;
-padding:20px;
-margin-bottom:20px;
-border-radius:12px;
-box-shadow:0 3px 12px rgba(0,0,0,.08);
-}
-
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-gap:12px;
-}
-
-.stat{
-background:#eaf2fb;
-padding:18px;
-border-radius:10px;
-text-align:center;
-}
-
-.stat strong{
-display:block;
-font-size:25px;
-color:#123c69;
-}
-
-label{
-display:block;
-font-weight:bold;
-margin-top:12px;
-margin-bottom:6px;
-}
-
-select{
-width:100%;
-padding:12px;
-border:1px solid #ccc;
-border-radius:8px;
-font-size:16px;
-}
-
-button{
-width:100%;
-padding:12px;
-margin-top:10px;
-border:0;
-border-radius:8px;
-background:#123c69;
-color:white;
-font-size:16px;
-cursor:pointer;
-}
-
-button:hover{
-opacity:.9;
-}
-
-.button-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:10px;
-}
-
-.question{
-background:#fafafa;
-border:1px solid #ddd;
-border-radius:10px;
-padding:16px;
-margin:12px 0;
-}
-
-.question-number{
-font-weight:bold;
-font-size:17px;
-}
-
-.topic{
-font-size:13px;
-color:#666;
-margin-top:6px;
-}
-
-.answer{
-display:none;
-margin-top:12px;
-padding:12px;
-background:#e8f5e9;
-border-left:5px solid #2e7d32;
-border-radius:5px;
-}
-
-footer{
-text-align:center;
-padding:25px;
-color:#666;
-}
-
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#f4f7fb;color:#222}
+header{background:#123c69;color:white;text-align:center;padding:25px 15px}
+header h1{margin:0}
+.container{max-width:1100px;margin:auto;padding:20px}
+.card{background:white;padding:20px;margin-bottom:18px;border-radius:12px;box-shadow:0 3px 12px #0001}
+select,button{width:100%;padding:12px;margin:7px 0;border-radius:8px;font-size:16px}
+select{border:1px solid #ccc;background:white}
+button{border:0;background:#123c69;color:white;cursor:pointer}
+button:hover{opacity:.88}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.stat{background:#eaf2fb;padding:15px;text-align:center;border-radius:8px}
+.stat b{display:block;font-size:24px;color:#123c69}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
+.question{border:1px solid #ddd;padding:15px;margin:10px 0;border-radius:9px;background:#fafafa}
+.answer{display:none;background:#e8f5e9;padding:12px;margin-top:10px;border-left:4px solid #2e7d32}
+.topic{font-size:13px;color:#666;margin-top:5px}
 </style>
 </head>
 
 <body>
 
 <header>
-
 <h1>EduScience MCE Study Hub</h1>
-
-<p>
-University Learning • CAT Practice • Revision • Mock Papers
-</p>
-
+<p>CAT Practice • Revision • Mock Papers</p>
 </header>
-
 
 <div class="container">
 
-
 <div class="card">
-
-<h2>Select Your University</h2>
-
+<h2>University</h2>
 <select id="university">
-
-<option value="">
-Select University
-</option>
-
-<option>
-Egerton University
-</option>
-
-<option>
-University of Nairobi
-</option>
-
-<option>
-Kenyatta University
-</option>
-
-<option>
-Jomo Kenyatta University of Agriculture and Technology
-</option>
-
-<option>
-Maseno University
-</option>
-
+<option value="">Select University</option>
+<option>Egerton University</option>
+<option>University of Nairobi</option>
+<option>Kenyatta University</option>
+<option>Jomo Kenyatta University of Agriculture and Technology</option>
+<option>Maseno University</option>
 </select>
-
 </div>
 
-
 <div class="card">
-
-<h2>Select Unit</h2>
-
+<h2>Unit</h2>
 <select id="course">
-
-<option value="">
-Select Unit
-</option>
-
-<option value="MATH 132">
-MATH 132
-</option>
-
-<option value="CHEM 110">
-CHEM 110
-</option>
-
-<option value="MATH 112">
-MATH 112
-</option>
-
-<option value="COMP 101">
-COMP 101
-</option>
-
-<option value="EPSC 121">
-EPSC 121 — Psychology
-</option>
-
-<option value="EDFO 111">
-EDFO 111 — History of Education
-</option>
-
-<option value="CHEM 120">
-CHEM 120
-</option>
-
+<option value="">Select Unit</option>
+<option>MATH 132</option>
+<option>CHEM 110</option>
+<option>MATH 112</option>
+<option>COMP 101</option>
+<option>EPSC 121 — Psychology</option>
+<option>EDFO 111 — History of Education</option>
+<option>CHEM 120</option>
 </select>
-
 </div>
 
-
 <div class="card">
-
-<h2>Select Topic</h2>
-
+<h2>Topic</h2>
 <select id="topic">
-
-<option value="">
-Select Unit First
-</option>
-
+<option value="">All Topics</option>
 </select>
-
 </div>
 
-
 <div class="card">
-
 <div class="stats">
-
-<div class="stat">
-<strong>5</strong>
-Universities
+<div class="stat"><b>5</b>Universities</div>
+<div class="stat"><b>7</b>Units</div>
+<div class="stat"><b>30</b>CAT / Unit</div>
+<div class="stat"><b>70</b>Revision / Unit</div>
+<div class="stat"><b>700</b>Questions</div>
+<div class="stat"><b>40</b>Mock Papers</div>
 </div>
-
-<div class="stat">
-<strong>7</strong>
-Units
 </div>
-
-<div class="stat">
-<strong>210</strong>
-CAT Questions
-</div>
-
-<div class="stat">
-<strong>490</strong>
-Revision Questions
-</div>
-
-<div class="stat">
-<strong>700+</strong>
-Questions
-</div>
-
-<div class="stat">
-<strong>40+</strong>
-Mock Papers
-</div>
-
-</div>
-
-</div>
-
 
 <div class="card">
-
 <h2>Practice</h2>
-
-<div class="button-grid">
-
-<button onclick="openCAT()">
-CAT Practice
-</button>
-
-<button onclick="openRevision()">
-Revision Questions
-</button>
-
-<button onclick="openMocks()">
-Mock Papers
-</button>
-
+<div class="grid">
+<button onclick="showCAT()">CAT Practice</button>
+<button onclick="showRevision()">Revision Questions</button>
+<button onclick="showMocks()">Mock Papers</button>
 </div>
-
 </div>
-
 
 <div id="content"></div>
 
-
 </div>
-
-
-<footer>
-
-EduScience MCE Study Hub
-
-</footer>
-
 
 <script>
 
-/* ==========================================
+/* =========================
    TOPICS
-========================================== */
+========================= */
 
-const topics = {
+const topics={
 
 "MATH 132":[
-
-"Equation of a straight line",
-
-"Equation of a circle",
-
-"Parabola",
-
-"Hyperbola",
-
-"Ellipse",
-
-"Vector operations",
-
+"Equation of a straight line","Equation of a circle","Parabola",
+"Hyperbola","Ellipse","Vector operations",
 "Vectors in Cartesian coordinates",
-
 "Equation of a line using vectors and Cartesian coordinates",
-
 "Equation of a plane using vectors and Cartesian coordinates"
-
 ],
-
 
 "CHEM 110":[
-
-"History of the atom",
-
-"Stoichiometry - mole concept",
-
+"History of the atom","Stoichiometry - mole concept",
 "Quantum theory and atomic structures",
-
 "Trends in physical properties of group elements",
-
-"Graphic materials",
-
-"Chemical bonding"
-
+"Graphic materials","Chemical bonding"
 ],
-
 
 "MATH 112":[
-
-"Sequence and series",
-
-"Trigonometry",
-
-"Set theory",
-
-"Mathematical logics",
-
-"Number systems",
-
-"Relations and mapping",
-
-"Functions",
-
-"Permutations and combinations",
-
-"The binomial theorem"
-
+"Sequence and series","Trigonometry","Set theory",
+"Mathematical logics","Number systems","Relations and mapping",
+"Functions","Permutations and combinations","The binomial theorem"
 ],
-
 
 "COMP 101":[
-
-"Nature and functions of computers",
-
-"Hardware",
-
-"Software",
-
-"Firmware",
-
-"Power",
-
-"Data processing",
-
-"Information systems",
-
-"CPU",
-
-"Motherboard",
-
-"RAM",
-
-"ROM",
-
-"Hard drive",
-
-"Input and output devices",
-
-"Removable storage",
-
-"Computer networks",
-
-"Internet",
-
-"Windows operating environment",
-
-"Electronic mail",
-
-"World Wide Web",
-
-"Word processing",
-
-"Database",
-
-"Electronic spreadsheets"
-
+"Nature and functions of computers","Hardware","Software","Firmware",
+"Power","Data processing","Information systems","CPU","Motherboard",
+"RAM","ROM","Hard drive","Input and output devices",
+"Removable storage","Computer networks","Internet",
+"Windows operating environment","Electronic mail","World Wide Web",
+"Word processing","Database","Electronic spreadsheets"
 ],
-
 
 "EPSC 121":[
-
-"Introduction to Psychology",
-
-"Psychology as a Science",
-
-"Goals of Psychology",
-
-"Historical Development of Psychology",
-
-"Branches and Schools of Psychology",
-
-"Structuralism",
-
-"Functionalism",
-
-"Behaviourism",
-
-"Humanistic Perspective",
-
-"Cognitive Perspective",
-
-"Biological Perspective",
-
-"Eclectic Perspective",
-
-"Heredity and Environment",
-
-"Biological Basis of Behaviour",
-
-"Nervous System",
-
-"CNS and PNS",
-
-"Neurons",
-
-"Autonomic Nervous System",
-
-"Sympathetic and Parasympathetic Divisions",
-
-"Endocrine System",
-
-"Brain and Main Divisions",
-
-"Spinal Cord",
-
-"Motivation",
-
-"Intrinsic and Extrinsic Motivation",
-
-"Maslow's Hierarchy of Needs"
-
+"Introduction to Psychology","Psychology as a Science","Goals of Psychology",
+"Historical Development of Psychology","Branches and Schools of Psychology",
+"Structuralism","Functionalism","Behaviourism","Humanistic Perspective",
+"Cognitive Perspective","Biological Perspective","Eclectic Perspective",
+"Heredity and Environment","Biological Basis of Behaviour","Nervous System",
+"CNS and PNS","Neurons","Autonomic Nervous System",
+"Sympathetic and Parasympathetic Divisions","Endocrine System",
+"Brain and Main Divisions","Spinal Cord","Motivation",
+"Intrinsic and Extrinsic Motivation","Maslow's Hierarchy of Needs"
 ],
-
 
 "EDFO 111":[
-
-"History and Development of Education",
-
-"Foundations of Education",
-
-"Spartan Education",
-
-"Athenian Education",
-
-"Spartan and Athenian Education",
-
-"Religious Foundations of Education",
-
-"Islamic Education",
-
-"Jewish Education",
-
-"Christian Education"
-
+"History and Development of Education","Foundations of Education",
+"Spartan Education","Athenian Education",
+"Spartan and Athenian Education","Religious Foundations of Education",
+"Islamic Education","Jewish Education","Christian Education"
 ],
 
-
 "CHEM 120":[
-
-"Gases and Kinetic Molecular Theory",
-
-"Chemical Equilibrium",
-
-"Ionic Equilibrium",
-
-"Acids and Bases",
-
-"Thermochemistry",
-
-"Chemical Kinetics",
-
-"Electrochemistry"
-
+"Gases and Kinetic Molecular Theory","Chemical Equilibrium",
+"Ionic Equilibrium","Acids and Bases","Thermochemistry",
+"Chemical Kinetics","Electrochemistry"
 ]
 
 };
 
 
-/* ==========================================
-   LINK TOPICS TO UNIT
-========================================== */
+/* =========================
+   HELPERS
+========================= */
 
-const courseBox =
-document.getElementById("course");
+function q(topic,question,answer,explanation=""){
+return {topic,question,answer,explanation};
+}
 
-const topicBox =
-document.getElementById("topic");
+function n(i,min,max){
+return min+(i%(max-min+1));
+}
 
 
-courseBox.addEventListener("change",function(){
+/* =========================
+   MATH 132
+========================= */
 
-topicBox.innerHTML =
-'<option value="">All Topics</option>';
+function math132(mode){
 
-const selected =
-this.value;
+let a=[];
 
-if(topics[selected]){
+for(let i=1;i<=100;i++){
 
-topics[selected].forEach(function(topic){
+let t=topics["MATH 132"][(i-1)%9];
 
-const option =
-document.createElement("option");
+if(t==="Equation of a straight line"){
+let m=(i%7)+1;
+let x=i%6+1;
+let y=m*x+2;
+a.push(q(t,
+`Find the gradient of the line y = ${m}x + 2.`,
+`${m}`,
+`In y = mx + c, m is the gradient.`));
 
-option.value=topic;
+}else if(t==="Equation of a circle"){
+let r=(i%8)+2;
+a.push(q(t,
+`Find the radius of x² + y² = ${r*r}.`,
+`${r}`,
+`Compare x² + y² = r².`));
 
-option.textContent=topic;
+}else if(t==="Parabola"){
+let h=i%5;
+let k=i%6;
+a.push(q(t,
+`State the vertex of y = (x - ${h})² + ${k}.`,
+`(${h}, ${k})`,
+`The vertex form is y=(x-h)²+k.`));
+
+}else if(t==="Hyperbola"){
+let k=(i%9)+2;
+let x=(i%5)+1;
+a.push(q(t,
+`If xy = ${k}, find y when x = ${x}.`,
+`${k/x}`,
+`Use y = k/x.`));
+
+}else if(t==="Ellipse"){
+let A=(i%5)+3;
+let B=(i%4)+2;
+a.push(q(t,
+`For x²/${A*A} + y²/${B*B} = 1, state the semi-major and semi-minor axes.`,
+`${Math.max(A,B)} and ${Math.min(A,B)}`,
+`The square roots of the denominators give the semi-axis lengths.`));
+
+}else if(t==="Vector operations"){
+let x=i%6+1;
+let y=i%5+2;
+a.push(q(t,
+`Find the magnitude of vector (${x}, ${y}).`,
+`√(${x*x+y*y})`,
+`Magnitude = √(x²+y²).`));
+
+}else if(t==="Vectors in Cartesian coordinates"){
+let x1=i%5,y1=i%4,x2=x1+2,y2=y1+3;
+a.push(q(t,
+`Find vector AB if A(${x1},${y1}) and B(${x2},${y2}).`,
+`(2, 3)`,
+`AB = B - A.`));
+
+}else if(t==="Equation of a line using vectors and Cartesian coordinates"){
+let x=i%5,y=i%4;
+a.push(q(t,
+`Write a vector equation of a line through (${x},${y}) with direction vector (2,3).`,
+`r = (${x},${y}) + λ(2,3)`,
+`A line is position vector plus a scalar multiple of its direction vector.`));
+
+}else{
+let x=i%5+1;
+a.push(q(t,
+`A plane has normal vector (1,2,${x}). What is its normal vector?`,
+`(1,2,${x})`,
+`The vector perpendicular to the plane is its normal vector.`));
+}
+
+}
+
+return mode==="cat"?a.slice(0,30):a;
+}
+
+
+/* =========================
+   CHEM 110
+========================= */
+
+function chem110(mode){
+
+let a=[];
+
+const masses={
+H:1,C:12,O:16,Na:23,Cl:35.5
+};
+
+for(let i=1;i<=100;i++){
+
+let t=topics["CHEM 110"][(i-1)%6];
+
+if(t==="Stoichiometry - mole concept"){
+
+let mass=i%10+2;
+let molar=18;
+
+a.push(q(t,
+`Calculate the number of moles in ${mass} g of H₂O.`,
+`${mass}/18 mol`,
+`Moles = mass ÷ molar mass. H₂O has molar mass 18 g mol⁻¹.`));
+
+}else if(t==="Quantum theory and atomic structures"){
+
+let nlevel=i%4+1;
+a.push(q(t,
+`How many orbitals are present in the n = ${nlevel} shell?`,
+`${nlevel*nlevel}`,
+`The number of orbitals in shell n is n².`));
+
+}else if(t==="History of the atom"){
+
+let names=[
+"Dalton","Thomson","Rutherford","Bohr"
+];
+
+let name=names[i%names.length];
+
+a.push(q(t,
+`Which atomic model is associated with ${name}?`,
+`${name}'s atomic model`,
+`The scientist contributed a major model in the development of atomic theory.`));
+
+}else if(t==="Trends in physical properties of group elements"){
+
+a.push(q(t,
+`What generally happens to atomic radius down a group?`,
+`It increases.`,
+`Additional electron shells are added down a group.`));
+
+}else if(t==="Graphic materials"){
+
+a.push(q(t,
+`What type of graph is commonly used to show a continuous relationship between two variables?`,
+`A line graph.`,
+`Continuous data can be represented effectively using a line graph.`));
+
+}else{
+
+a.push(q(t,
+`Which type of bond involves sharing of electrons between atoms?`,
+`Covalent bond.`,
+`Covalent bonding involves shared electron pairs.`));
+
+}
+
+}
+
+return mode==="cat"?a.slice(0,30):a;
+}
+
+
+/* =========================
+   MATH 112
+========================= */
+
+function math112(mode){
+
+let a=[];
+
+for(let i=1;i<=100;i++){
+
+let t=topics["MATH 112"][(i-1)%9];
+
+if(t==="Sequence and series"){
+
+let first=i%6+1;
+let d=i%5+1;
+let term=first+4*d;
+
+a.push(q(t,
+`Find the 5th term of the arithmetic sequence beginning ${first}, with common difference ${d}.`,
+`${term}`,
+`aₙ = a + (n-1)d.`));
+
+}else if(t==="Trigonometry"){
+
+a.push(q(t,
+`What is sin 30°?`,
+`1/2`,
+`This is a standard trigonometric value.`));
+
+}else if(t==="Set theory"){
+
+a.push(q(t,
+`If A={1,2,3} and B={3,4,5}, find A ∩ B.`,
+`{3}`,
+`The intersection contains elements common to both sets.`));
+
+}else if(t==="Mathematical logics"){
+
+a.push(q(t,
+`What is the truth value of “2 is greater than 5”?`,
+`False`,
+`2 is not greater than 5.`));
+
+}else if(t==="Number systems"){
+
+let decimal=i%20+1;
+
+a.push(q(t,
+`Convert decimal ${decimal} to binary.`,
+`Use repeated division by 2.`,
+`Divide the decimal number repeatedly by 2 and read the remainders upward.`));
+
+}else if(t==="Relations and mapping"){
+
+a.push(q(t,
+`What is the domain of a relation?`,
+`The set of input elements.`,
+`The domain contains the first components or inputs.`));
+
+}else if(t==="Functions"){
+
+let x=i%7+1;
+a.push(q(t,
+`If f(x)=2x+3, find f(${x}).`,
+`${2*x+3}`,
+`Substitute x=${x} into the function.`));
+
+}else if(t==="Permutations and combinations"){
+
+let r=2;
+let nn=5+i%4;
+
+a.push(q(t,
+`Calculate ${nn}P${r}.`,
+`${nn*(nn-1)}`,
+`nPr = n(n-1) for r=2.`));
+
+}else{
+
+let nval=5+i%5;
+
+a.push(q(t,
+`What is the coefficient of x in (1+x)^${nval}?`,
+`${nval}`,
+`The coefficient of x is n in (1+x)^n.`));
+
+}
+
+}
+
+return mode==="cat"?a.slice(0,30):a;
+}
+
+
+/* =========================
+   COMP 101
+========================= */
+
+function comp101(mode){
+
+let a=[];
+
+for(let i=1;i<=100;i++){
+
+let t=topics["COMP 101"][(i-1)%topics["COMP 101"].length];
+
+const data={
+
+"Nature and functions of computers":
+["What is a computer?","An electronic device that processes data.","A computer accepts data, processes it and produces information."],
+
+"Hardware":
+["What is hardware?","The physical components of a computer.","Hardware can be physically touched."],
+
+"Software":
+["What is software?","Programs and instructions used by a computer.","Software tells hardware what to do."],
+
+"Firmware":
+["What is firmware?","Software stored in hardware that controls basic operations.","Firmware provides low-level device control."],
+
+"Power":
+["Why is electrical power important to a computer?","It supplies energy for operation.","Computer components require electrical energy."],
+
+"Data processing":
+["What is data processing?","The conversion of raw data into useful information.","Processing transforms input data."],
+
+"Information systems":
+["What is an information system?","A system that collects, processes, stores and distributes information.","People, procedures, data and technology can form an information system."],
+
+"CPU":
+["What is the main role of the CPU?","To execute instructions and process data.","The CPU performs program instructions."],
+
+"Motherboard":
+["What is a motherboard?","The main circuit board connecting computer components.","Components communicate through the motherboard."],
+
+"RAM":
+["What is RAM used for?","Temporary storage of data and programs in use.","RAM is volatile memory."],
+
+"ROM":
+["What is ROM?","Non-volatile memory used to store permanent or semi-permanent instructions.","ROM retains its contents without normal power."],
+
+"Hard drive":
+["What is a hard drive used for?","Long-term storage of data and programs.","It provides secondary storage."],
+
+"Input and output devices":
+["Give one input device.","Keyboard.","Input devices send data to a computer."],
+
+"Removable storage":
+["Give one removable storage device.","USB flash drive.","It can be connected and removed from a computer."],
+
+"Computer networks":
+["What is a computer network?","A group of connected computers and devices.","Networks allow communication and resource sharing."],
+
+"Internet":
+["What is the Internet?","A global network of interconnected networks.","It connects devices and networks worldwide."],
+
+"Windows operating environment":
+["What is an operating system?","Software that manages computer hardware and software resources.","It provides the environment in which applications run."],
+
+"Electronic mail":
+["What is email?","Electronic communication sent over computer networks.","Email allows digital messages to be exchanged."],
+
+"World Wide Web":
+["What is the World Wide Web?","A system of interlinked web resources accessed through the Internet.","The Web operates over the Internet."],
+
+"Word processing":
+["What is word processing?","Creating, editing and formatting text documents.","Word processors manage text documents."],
+
+"Database":
+["What is a database?","An organized collection of related data.","Databases allow structured storage and retrieval."],
+
+"Electronic spreadsheets":
+["What is a spreadsheet?","Software that organizes data in rows and columns and supports calculations.","Cells can contain data and formulas."]
+
+};
+
+let d=data[t];
+
+a.push(q(t,d[0],d[1],d[2]));
+
+}
+
+return mode==="cat"?a.slice(0,30):a;
+}
+
+
+/* =========================
+   EPSC 121
+========================= */
+
+function epsc121(mode){
+
+let a=[];
+
+for(let i=1;i<=100;i++){
+
+let t=topics["EPSC 121"][(i-1)%25];
+
+const bank={
+
+"Introduction to Psychology":
+["What is psychology?","The scientific study of behaviour and mental processes."],
+
+"Psychology as a Science":
+["Why is psychology considered a science?","It uses systematic observation and scientific methods."],
+
+"Goals of Psychology":
+["What are major goals of psychology?","Describe, explain, predict and control behaviour."],
+
+"Historical Development of Psychology":
+["Who established the first psychology laboratory in 1879?","Wilhelm Wundt."],
+
+"Branches and Schools of Psychology":
+["What does social psychology study?","How people influence and interact with one another."],
+
+"Structuralism":
+["What did structuralism focus on?","The basic elements of conscious experience."],
+
+"Functionalism":
+["What did functionalism emphasize?","The functions and purposes of mental processes and behaviour."],
+
+"Behaviourism":
+["What does behaviourism emphasize?","Observable behaviour."],
+
+"Humanistic Perspective":
+["What does the humanistic perspective emphasize?","Free will, personal growth and human potential."],
+
+"Cognitive Perspective":
+["What does the cognitive perspective study?","Mental processes such as memory, thinking and problem-solving."],
+
+"Biological Perspective":
+["What does the biological perspective examine?","Biological processes underlying behaviour."],
+
+"Eclectic Perspective":
+["What is an eclectic approach?","Using ideas from different perspectives where appropriate."],
+
+"Heredity and Environment":
+["What does heredity refer to?","Genetic influences inherited from parents."],
+
+"Biological Basis of Behaviour":
+["What system provides rapid communication through nerve impulses?","The nervous system."],
+
+"Nervous System":
+["What is the main function of the nervous system?","To receive, process and transmit information."],
+
+"CNS and PNS":
+["What are the two main divisions of the nervous system?","Central nervous system and peripheral nervous system."],
+
+"Neurons":
+["What is the basic functional cell of the nervous system?","A neuron."],
+
+"Autonomic Nervous System":
+["What does the autonomic nervous system regulate?","Involuntary body functions."],
+
+"Sympathetic and Parasympathetic Divisions":
+["What is the general role of the sympathetic division?","It prepares the body for action during stress or activity."],
+
+"Endocrine System":
+["What does the endocrine system release?","Hormones into the bloodstream."],
+
+"Brain and Main Divisions":
+["What is the largest major part of the brain?","The cerebrum."],
+
+"Spinal Cord":
+["What is an important function of the spinal cord?","It carries signals between the brain and body and participates in reflexes."],
+
+"Motivation":
+["What is motivation?","A process that energizes and directs behaviour toward goals."],
+
+"Intrinsic and Extrinsic Motivation":
+["What is intrinsic motivation?","Motivation arising from internal interest or satisfaction."],
+
+"Maslow's Hierarchy of Needs":
+["Which needs form the base of Maslow's hierarchy?","Physiological needs."]
+
+};
+
+let d=bank[t];
+
+a.push(q(t,d[0],d[1],`This question tests the key concept of ${t}.`));
+
+}
+
+return mode==="cat"?a.slice(0,30):a;
+}
+
+
+/* =========================
+   EDFO 111
+========================= */
+
+function edfo111(mode){
+
+let a=[];
+
+for(let i=1;i<=100;i++){
+
+let t=topics["EDFO 111"][(i-1)%9];
+
+const bank={
+
+"History and Development of Education":
+["Why is the history of education studied?","To understand how educational ideas and institutions developed."],
+
+"Foundations of Education":
+["What are foundations of education?","The major disciplines and ideas that provide a basis for understanding education."],
+
+"Spartan Education":
+["What was a major purpose of Spartan education?","Preparation for disciplined and military-oriented citizenship."],
+
+"Athenian Education":
+["What did Athenian education emphasize?","Intellectual, physical, cultural and civic development."],
+
+"Spartan and Athenian Education":
+["Give one major difference between Spartan and Athenian education.","Sparta emphasized military discipline, while Athens placed greater emphasis on broader intellectual and civic development."],
+
+"Religious Foundations of Education":
+["How has religion influenced education historically?","It has transmitted beliefs, values, knowledge and traditions."],
+
+"Islamic Education":
+["What has traditionally been important in Islamic education?","Religious knowledge, moral development and learning."],
+
+"Jewish Education":
+["What was an important feature of traditional Jewish education?","Transmission of religious teachings and traditions."],
+
+"Christian Education":
+["What has Christian education traditionally emphasized?","Religious teaching, moral values and Christian beliefs."]
+
+};
+
+let d=bank[t];
+
+a.push(q(t,d[0],d[1],`This question covers ${t}.`));
+
+}
+
+return mode==="cat"?a.slice(0,30):a;
+}
+
+
+/* =========================
+   CHEM 120
+========================= */
+
+function chem120(mode){
+
+let a=[];
+
+for(let i=1;i<=100;i++){
+
+let t=topics["CHEM 120"][(i-1)%7];
+
+if(t==="Gases and Kinetic Molecular Theory"){
+
+let V1=2;
+let V2=4;
+let T1=300;
+let T2=600;
+
+a.push(q(t,
+`At constant pressure, a gas has volume ${V1} L at ${T1} K. What is its volume at ${T2} K?`,
+`${V2} L`,
+`Charles' law states V₁/T₁ = V₂/T₂.`));
+
+}else if(t==="Chemical Equilibrium"){
+
+a.push(q(t,
+`What happens to an equilibrium system when a reactant is added?`,
+`The equilibrium shifts toward products, if the added species is a reactant.`,
+`This follows Le Chatelier's principle.`));
+
+}else if(t==="Ionic Equilibrium"){
+
+a.push(q(t,
+`What is an equilibrium involving ions in solution called?`,
+`Ionic equilibrium.`,
+`It involves reversible processes involving ions in solution.`));
+
+}else if(t==="Acids and Bases"){
+
+let pH=i%6+1;
+
+a.push(q(t,
+`A solution has pH ${pH}. Is it acidic or basic?`,
+`${pH<7?"Acidic":pH===7?"Neutral":"Basic"}`,
+`pH below 7 is acidic, 7 is neutral and above 7 is basic.`));
+
+}else if(t==="Thermochemistry"){
+
+let m=2;
+let c=4.18;
+let dt=10;
+
+a.push(q(t,
+`Calculate q for ${m} g of water heated through ${dt} °C. Use c = 4.18 J g⁻¹ °C⁻¹.`,
+`${m*c*dt} J`,
+`Use q = mcΔT.`));
+
+}else if(t==="Chemical Kinetics"){
+
+a.push(q(t,
+`What does chemical kinetics study?`,
+`The rates of chemical reactions and factors affecting them.`,
+`Kinetics deals with reaction speed and its dependence on conditions.`));
+
+}else{
+
+a.push(q(t,
+`What is oxidation?`,
+`Loss of electrons.`,
+`Oxidation can be remembered as loss of electrons.`));
+
+}
+
+}
+
+return mode==="cat"?a.slice(0,30):a;
+}
+
+
+/* =========================
+   BUILD ALL QUESTION BANKS
+========================= */
+
+const questionBank={
+
+"MATH 132":{
+cat:math132("cat"),
+revision:math132("revision")
+},
+
+"CHEM 110":{
+cat:chem110("cat"),
+revision:chem110("revision")
+},
+
+"MATH 112":{
+cat:math112("cat"),
+revision:math112("revision")
+},
+
+"COMP 101":{
+cat:comp101("cat"),
+revision:comp101("revision")
+},
+
+"EPSC 121":{
+cat:epsc121("cat"),
+revision:epsc121("revision")
+},
+
+"EDFO 111":{
+cat:edfo111("cat"),
+revision:edfo111("revision")
+},
+
+"CHEM 120":{
+cat:chem120("cat"),
+revision:chem120("revision")
+}
+
+};
+
+
+/* =========================
+   TOPIC DROPDOWN
+========================= */
+
+const courseBox=document.getElementById("course");
+const topicBox=document.getElementById("topic");
+
+courseBox.addEventListener("change",()=>{
+
+topicBox.innerHTML='<option value="">All Topics</option>';
+
+const list=topics[courseBox.value]||[];
+
+list.forEach(t=>{
+
+let option=document.createElement("option");
+
+option.value=t;
+option.textContent=t;
 
 topicBox.appendChild(option);
 
 });
 
-}
-
 });
 
 
-/* ==========================================
-   QUESTION SYSTEM
-========================================== */
+/* =========================
+   FILTER
+========================= */
 
-/*
-The complete question bank will be connected
-to this system.
+function filtered(list){
 
-Each question uses:
+let t=topicBox.value;
 
-topic
-question
-answer
-explanation
-*/
-
-
-const questionBank = {};
-
-
-/* ==========================================
-   QUESTION DISPLAY
-========================================== */
-
-function displayQuestions(title,questions){
-
-const content =
-document.getElementById("content");
-
-content.innerHTML="";
-
-
-const card =
-document.createElement("div");
-
-card.className="card";
-
-
-const heading =
-document.createElement("h2");
-
-heading.textContent=title;
-
-card.appendChild(heading);
-
-
-if(questions.length===0){
-
-const message =
-document.createElement("p");
-
-message.textContent =
-"No questions have been loaded for this unit yet.";
-
-card.appendChild(message);
-
-content.appendChild(card);
-
-return;
+return t ? list.filter(x=>x.topic===t) : list;
 
 }
 
 
-questions.forEach(function(item,index){
+/* =========================
+   DISPLAY
+========================= */
 
-const question =
-document.createElement("div");
+function display(title,list){
 
-question.className="question";
+const content=document.getElementById("content");
 
+content.innerHTML="";
 
-question.innerHTML=`
+let card=document.createElement("div");
 
-<div class="question-number">
+card.className="card";
 
-${index+1}. ${item.question}
+let h=document.createElement("h2");
 
-</div>
+h.textContent=title+" ("+list.length+" questions)";
 
-<div class="topic">
+card.appendChild(h);
 
-Topic: ${item.topic}
+list.forEach((item,i)=>{
 
-</div>
+let box=document.createElement("div");
 
-<button onclick="toggleAnswer(${index})">
+box.className="question";
 
+box.innerHTML=`
+
+<strong>${i+1}. ${item.question}</strong>
+
+<div class="topic">Topic: ${item.topic}</div>
+
+<button onclick="toggle(${i})">
 Show Answer
-
 </button>
 
-<div class="answer" id="answer-${index}">
-
-<strong>Answer:</strong>
-
-${item.answer}
-
+<div class="answer" id="a${i}">
+<strong>Answer:</strong> ${item.answer}
 <br><br>
-
-<strong>Explanation:</strong>
-
-${item.explanation}
-
+<strong>Explanation:</strong> ${item.explanation}
 </div>
 
 `;
 
-
-card.appendChild(question);
+card.appendChild(box);
 
 });
-
 
 content.appendChild(card);
 
 }
 
 
-function toggleAnswer(number){
+/* =========================
+   CAT / REVISION
+========================= */
 
-const answer =
-document.getElementById(
-"answer-"+number
-);
+function showCAT(){
 
-if(answer.style.display==="block"){
+let c=courseBox.value;
 
-answer.style.display="none";
-
-}else{
-
-answer.style.display="block";
-
-}
-
-}
-
-
-/* ==========================================
-   FILTER QUESTIONS
-========================================== */
-
-function filterQuestions(list){
-
-const selectedTopic =
-topicBox.value;
-
-if(!selectedTopic){
-
-return list;
-
-}
-
-return list.filter(function(item){
-
-return item.topic===selectedTopic;
-
-});
-
-}
-
-
-/* ==========================================
-   CAT
-========================================== */
-
-function openCAT(){
-
-const course =
-courseBox.value;
-
-if(!course){
-
-alert("Please select a unit first.");
-
+if(!c){
+alert("Select a unit first.");
 return;
-
 }
 
-const list =
-questionBank[course]?.cat || [];
-
-displayQuestions(
-
-course+" — CAT Practice",
-
-filterQuestions(list)
-
+display(
+c+" — CAT Practice",
+filtered(questionBank[c].cat)
 );
 
 }
 
+function showRevision(){
 
-/* ==========================================
-   REVISION
-========================================== */
+let c=courseBox.value;
 
-function openRevision(){
-
-const course =
-courseBox.value;
-
-if(!course){
-
-alert("Please select a unit first.");
-
+if(!c){
+alert("Select a unit first.");
 return;
-
 }
 
-const list =
-questionBank[course]?.revision || [];
-
-displayQuestions(
-
-course+" — Revision Questions",
-
-filterQuestions(list)
-
+display(
+c+" — Revision Questions",
+filtered(questionBank[c].revision)
 );
 
 }
 
 
-/* ==========================================
+function toggle(i){
+
+let x=document.getElementById("a"+i);
+
+x.style.display=
+x.style.display==="block"?"none":"block";
+
+}
+
+
+/* =========================
    MOCK PAPERS
-========================================== */
+========================= */
 
-function openMocks(){
+function showMocks(){
 
-const content =
-document.getElementById("content");
+let c=courseBox.value;
+
+if(!c){
+alert("Select a unit first.");
+return;
+}
+
+let content=document.getElementById("content");
 
 content.innerHTML=`
 
 <div class="card">
 
-<h2>Original Mock Papers</h2>
+<h2>${c} — Original Mock Papers</h2>
 
 <p>
-
 These are original practice papers created for
-EduScience MCE Study Hub. They are not presented
-as official university past papers.
-
+EduScience MCE Study Hub. They are not official
+university past papers.
 </p>
 
-<div class="button-grid">
+<div class="grid">
 
-${Array.from(
-{length:40},
-(_,i)=>
+${Array.from({length:40},(_,i)=>`
 
-`<button onclick="generateMock(${i+1})">
-
+<button onclick="makeMock(${i+1})">
 Mock Paper ${i+1}
+</button>
 
-</button>`
-
-).join("")}
-
-</div>
+`).join("")}
 
 </div>
 
+</div>
 `;
 
 }
 
 
-/* ==========================================
-   MOCK PAPER GENERATOR
-========================================== */
+function makeMock(number){
 
-function generateMock(number){
+let c=courseBox.value;
 
-const course =
-courseBox.value;
-
-if(!course){
-
-alert("Please select a unit first.");
-
-return;
-
-}
-
-const questions =
-[
-
-...(questionBank[course]?.cat || []),
-
-...(questionBank[course]?.revision || [])
-
+let questions=[
+...questionBank[c].cat,
+...questionBank[c].revision
 ].slice(0,30);
 
-
-if(!questions.length){
-
-alert(
-"The question bank for this unit is being added."
-);
-
-return;
-
-}
-
-
-let paper =
-
-course+
+let text=
+"EDUSCIENCE MCE STUDY HUB\n"+
+c+
 " — ORIGINAL MOCK PAPER "+
 number+
 "\n\n";
 
+questions.forEach((x,i)=>{
 
-questions.forEach(function(q,index){
-
-paper +=
-
-(index+1)+
-". "+
-q.question+
-"\n\n";
+text+=
+`${i+1}. ${x.question}\n\n`;
 
 });
 
-
-const blob =
-new Blob([paper],{
+let blob=new Blob([text],{
 type:"text/plain"
 });
 
+let url=URL.createObjectURL(blob);
 
-const url =
-URL.createObjectURL(blob);
+let a=document.createElement("a");
 
+a.href=url;
 
-const link =
-document.createElement("a");
+a.download=
+c.replaceAll(" ","_")+
+"_Mock_Paper_"+number+".txt";
 
-link.href=url;
-
-link.download =
-course.replaceAll(" ","_")+
-"_Mock_Paper_"+
-number+
-".txt";
-
-link.click();
+a.click();
 
 URL.revokeObjectURL(url);
 
